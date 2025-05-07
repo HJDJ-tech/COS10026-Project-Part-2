@@ -1,0 +1,831 @@
+/*
+
+filename: style.css
+
+author: Harry Lamb, Josh Trapman, Diesel Williams, Jerry Nguyen
+
+created: 2/04/2025
+
+last modified: 14/04/2025
+description: Refers to index.html, jobs.html, apply.html and about.html
+
+*/
+
+/* Set Default font for all text */
+* {
+    font-family: arial;
+    color: black;
+}
+
+.text-center {
+    text-align: center;
+    align-content: center;
+}
+
+/* Set the background colour for each page */
+body {
+    background-color: white      
+}
+  /* keep the navbar sticky */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+/* Format all header options */
+h1 {
+    font: 2em Arial, sans-serif bold;
+}
+  
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+  
+h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+  
+h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* End of header formatting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+  
+/* ------------------------banner homepage------------------------- */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("images/banner-about-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bannertext {
+    color: #e0fbff;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.bannercontent {
+    margin-left: 20px;
+
+}
+
+/* button format */
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #03346e;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: #0248a0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+  
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 52, 110, 0.3);
+}
+
+/* Full-width header */
+.header {
+    display: flex;
+    align-items: stretch; /* ensures children stretch to full header height */
+    background-color: #e3e1dc;
+    height: 43px;
+    width: 100%;
+}
+  
+/* Logo block fills full height */
+.logo-container {
+    padding: 0 15px;
+    display: flex;
+    background-color: #111;
+    align-items: center;
+    height: 100%; /* fills the header */
+}
+  
+.logo-container img {
+    height: 35px;
+    object-fit: contain;
+}
+  
+/* Nav menu */
+nav {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+  
+.menu {
+    height: 50%;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 14px 16px;
+    background-color: #e3e1dc;
+}
+  
+.menu a:hover {
+    border-radius: 10px;
+    background-color: grey;
+    color: white;
+}
+  
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    padding: 5px;
+}
+  
+/* Navigation menu */
+nav {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+  
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 2px;
+}
+  
+nav ul.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    padding: 6px 8px;
+}
+
+/*-------------------------------- upperfooter ------------------------------*/
+.Ready {
+    padding-top: 20px;
+    margin: 20px;
+    
+}
+
+.readybutton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.introouter {
+    text-align: center;
+}
+
+.narrowdiv {
+    display: inline-block;
+}
+
+.part6home {
+    background-color: #221f1f;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 0%;
+}
+
+.introduction {
+    color: #e0fbff;
+    max-width: 550px;
+    margin-bottom: 40px;
+}
+
+/* ------------------------------Footer  -------------------------------------*/
+.footer {
+    background-color: rgb(225, 225, 225);
+    text-align: left;
+    padding: +20px;
+    display: grid;
+    grid-template-columns: 20% 20% 15% 15% 15%;
+    column-gap: 40px;
+    text-wrap: inherit;
+    min-width: fit-content;
+}
+
+.objfooter {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    /* margin-right: 100px; */
+}
+
+.objfooter h3 {
+    margin-bottom: 15px;
+}
+
+.logofooter {
+    grid-column: 1 / span 2;
+}
+
+.email {
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
+.link {
+    margin-bottom: 15px;
+}
+
+.megaphonetelephone {
+    margin-bottom: 15px;
+}
+
+/* ------------------------------homepage styling ------------------------------*/
+.part2home {
+    font-size: 25px;
+    margin-top: 80px;
+    text-align: center;
+    max-width: 850px;
+    margin: 50px auto;  
+}
+
+.whywork  {
+    margin-bottom: 19px;
+}
+
+.youtube23{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube {    
+    aspect-ratio: 16/9;
+    width: 700px;
+}
+.part3home{
+ margin-top: 3%;
+ margin-bottom: 3%; 
+font-size: 22px;
+background-color: #f5f5f5;     
+text-align: center;
+padding: 60px 20px;
+font-family: Arial, sans-serif;
+}
+
+.part3home h2 {
+
+font-weight: bold;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+.part3home p {
+
+max-width: 700px;
+margin: 0 auto;
+line-height: 1.6;
+color: #333;
+}
+
+.part4home {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  color: white;
+  padding: 100px 0 100px;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.benefits-text {
+  max-width: 500px;
+  padding: 0 40px;
+  color: white;
+}
+
+.benefits-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.benefits-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.benefits-text li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white;
+}
+
+
+.benefits-img img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.part5home {
+  
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/global.png);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 95vh;
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+text-align: left;
+margin-bottom: 0%;
+
+}
+.part5home h2 {
+  color: white;
+  width: 500px;
+  font-size: 50px;
+  margin-left: 5%;
+  text-align: center;
+}
+.part5home p {
+  color: white;
+  width: 500px;
+  font-size: 30px;
+  margin-left: 5%;
+  text-align: center;
+  
+}
+.part5home .btn{
+ margin-left: 245px;
+ margin-top: 30px;
+}
+
+
+/* Remove bullet-point, indentation and display everything inline */
+.menu {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline-flex;
+}
+  
+/* Adds space betweeen the navigation items */
+.menu li a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+  
+nav ul {
+    list-style: none;
+}
+  
+footer p {
+    display: inline-block;
+    width: 33%;
+}
+  
+/* STYLING FOR ABOUT PAGE */
+  
+/* Table styling */
+
+table,th,td {
+        border: 1px solid black;
+        text-align: center;
+}
+      
+td,
+th {
+        background-color: #e1e1e1;
+}
+      
+td:hover {
+        color: darkblue;
+        background-color: lightblue;
+}
+  
+/*Figure team photo styling */
+#team_photo {  
+    float: right;
+    border: 2px solid black;
+    width: 20%;
+    height: 20%;
+}
+  
+figure {
+    margin: 0px;
+}
+  
+#team_image {
+    float: right;
+    width: 100%;
+    height: 100%;
+}
+  
+/* Section styling for about.html */
+#black_section {
+    background-color: #1e1e1e;
+    padding: 2em;
+    text-align: right;
+}
+  
+#grey_section {
+    align-content: center;
+    background-color: lightgrey;
+    padding: 2em;
+    text-align: left;
+}
+  
+.white_text {
+    color: white;
+}
+  
+#white_section {
+    background-color: white;
+    padding: 2em;
+    align-content: center;
+}
+
+/* Nested list for about page styling */
+#about_info { list-style-type: none; }
+
+/* Definition list styling */
+dl {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+dd {
+    margin-left: 1em;
+    margin-bottom: 1.5em;
+}
+  
+  
+/* STYLING FOR JOBS PAGE */
+.jobs_page_heading {
+    margin: 20px 0;
+}
+
+.jobs_page_nav {
+    min-width: 650px;
+}
+
+.jobs_page_header {
+    display: grid;
+    grid-template-columns: 50% 45%;
+    grid-template-rows: 10% 70%;
+    gap: 50px 50px;
+    justify-content: left;
+    align-items: center;
+    background-color: #1e1e1e;
+    min-height: 400px;
+    height: fit-content;
+    width: 100%;
+    min-width: 650px;
+}
+
+#jobs_page_main_heading {
+    grid-column: 1 / span 2;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.grey_content_section {
+    padding: 30px 0;
+    border-bottom: 4px solid #1e1e1e;
+    border-top: 4px solid #1e1e1e;
+    background-color: lightgrey;
+}
+
+/* Adding images to the background of each job position */
+#data_analyst {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/data-analyst.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#software_engineer {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/software_engineer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+#ux_designer {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/ux_designer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+#it_support {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/it_support.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+#cybersecurity_analyst {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/cybersecurity.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+#aside_container {
+    width: 90%;
+}
+
+/* Aside element floated to the right */
+#job_aside {
+    float: right;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 25%;
+    min-width: fit-content;
+    padding: 0 2em;
+}    
+
+#aside_list li {
+    margin-bottom: 10px;
+}
+
+#workers1_img {
+    width: 100%;
+}
+
+/* Contains all job position sections */
+#job_list {
+    width: 100%;
+    min-width: 650px;
+}
+
+/* Section for each different job position */
+.job_position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+    width: 100%;
+    min-width: fit-content;
+}
+
+.job_title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.job_outline {
+    align-self: center;
+    width: 80%;
+}
+
+.job_information {
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.job_responsibilities {
+    display: flex;
+    flex-direction: column;
+}
+
+.preferred_quals {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.job_salary {
+    display: flex;
+    flex-direction: column;
+}
+
+.team_lead {
+    grid-column: 3;
+}
+
+.center_heading {
+    text-align: center;
+}
+
+/* Section for each different job position */
+.job_apply_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    width: 100%;
+    min-width: 30em;
+}
+
+#jobs_page_footer {
+    min-width: 650px;
+}
+
+
+/* STYLING FOR APPLY PAGE */
+input {
+    width: 100%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=text] {
+    border: 2px black;
+    border-radius: 4px;
+}
+
+input[type=text] {
+    background-color:darkgray;
+    color: white;
+}
+
+input[type=text]:focus {
+    background-color:black;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input[type=email] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=email] {
+    border: 2px black;
+    border-radius: 4px;
+}
+
+input[type=email] {
+    background-color:darkgray;
+    color: white;
+}
+
+input[type=email]:focus {
+    background-color:black;
+}
+
+input[type=email]:focus {
+    border: 3px solid #555;
+}
+
+legend {
+    color: black;
+    padding: 5px 10px;
+}
+
+legend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    text-transform: uppercase;
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=date] {
+    border: 2px black;
+    border-radius: 4px;
+}
+
+input[type=date] {
+    background-color:darkgray;
+    color: white;
+}
+
+input[type=date]:focus {
+    background-color:black;
+}
+
+input[type=date]:focus {
+    border: 3px solid #555;
+}
+
+fieldset {
+    margin: 2em 0;
+    padding: 1em 2em;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+}
+
+legend {
+    font-size: 1.25em;
+    padding: 0.25em;
+    color: #999;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+.legend_2 {
+    font-size: 1.25em;
+    padding: 0.25em;
+    color: black;
+}
+
+.legend_2 {
+    color: black;
+    padding: 5px 10px;
+}
+
+.legend_2 {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.buttonfix1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;  
+    gap:16px;
+    padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+}
