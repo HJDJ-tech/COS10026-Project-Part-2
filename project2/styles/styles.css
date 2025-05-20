@@ -13,7 +13,7 @@ description: Refers to index.html, jobs.html, apply.html and about.html
 
 /* Set Default font for all text */
 * {
-    font-family: arial;
+    font-family: sans-serif;
     color: black;
 }
 
@@ -131,7 +131,7 @@ body {
     display: flex;
     align-items: stretch; /* ensures children stretch to full header height */
     background-color: #e3e1dc;
-    height: 43px;
+    height: 60px;
     width: 100%;
 }
   
@@ -145,7 +145,7 @@ body {
 }
   
 .logo-container img {
-    height: 35px;
+    height: 45px;
     object-fit: contain;
 }
   
@@ -157,10 +157,10 @@ nav {
 }
   
 .menu {
-    height: 50%;
+    height: 30%;
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     padding: 14px 16px;
     background-color: #e3e1dc;
 }
