@@ -10,10 +10,7 @@
     
     <body>
     <!-- div header -->
-    <div class="header">
-      <div class="logo-container">
-          <img src="images/image.png" alt="HJDJ Logo">
-      </div>
+      <?php include "header.inc"; ?>
       <!-- Site navigation -->
       <nav>
           <ul class="menu">
