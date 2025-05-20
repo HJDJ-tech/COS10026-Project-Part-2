@@ -46,11 +46,13 @@ session_start();
       <div class="whywork">
       <h2>Why Work With Us</h2>
       </div>
+      <div class="container">
       <p>
         HJDJ IT is dedicated to solving real-world technology problems. Our
         teams are building the future of enterprise solutions, cybersecurity,
         cloud services, and software development with purpose and impact.
       </p>
+    </div>
     </div>
     <div class="youtube23">
     <iframe class="youtube" src="https://www.youtube.com/embed/91tdkSp6ahA?si=7hIDFtaFurbIjBH-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
