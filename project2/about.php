@@ -114,52 +114,7 @@
 
 
         <!--Footer with Jira link-->
-        <div class="footer">
-          <!-- Jira link-->
-          <div class="logofooter">
-              <img src="images/image1.jpg" alt="HJDJ Logo">
-          </div>
-    
-          <div class="objfooter">
-              <h3>Contact</h3>
-              <div class="link">
-                  <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9">Jira Project</a>
-              </div>
-              <div class="email">
-                  <p>Email:</p>
-                  <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Tel: 408-486-1405</p>
-              </div>
-          </div>
-          
-          <div class="objfooter">
-              <h3>Company</h3>
-              <div class="link">
-                  <p>About us</p>
-              </div>
-              <div class="email">
-                  <p>Event</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Terms and conditions</p>
-              </div>
-          </div>
-
-          <div class="objfooter">
-              <h3>Follow Us</h3>
-              <div class="link">
-                  <p>Facebook</p>
-              </div>
-              <div class="email">
-                  <p>Instagram</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Twitter</p>
-              </div>
-          </div>
-      </div>
+        <?php include "footer.inc"; ?>
     </main>
 </body>
 
