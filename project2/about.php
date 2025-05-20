@@ -12,14 +12,7 @@
     <!-- div header -->
       <?php include "header.inc"; ?>
       <!-- Site navigation -->
-      <nav>
-          <ul class="menu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="jobs.html">Jobs</a></li>
-              <li><a href="apply.html">Apply</a></li>
-              <li><a href="about.html">About</a></li>
-          </ul>
-      </nav>
+      <?php include "nav.inc"; ?>
     </div>
 
         <main>
