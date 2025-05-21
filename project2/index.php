@@ -36,7 +36,7 @@ session_start();
     <div class="banner">
       <div class="bannercontent">
         <div class="bannertext">Careers at HJDJ IT </div>
-        <form action="jobs.html">
+        <form action="jobs.php">
           <button type="submit" class="btn">Explore Careers</button>
         </form>
       </div>
