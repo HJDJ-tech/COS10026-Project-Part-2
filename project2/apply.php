@@ -32,7 +32,7 @@
 
 <main>
 
-    <form method="post" action="process_eoi_project2_3.php" novalidate="novalidate">
+    <form method="post" action="process_eoi.php" novalidate="novalidate">
         <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
         <fieldset class="job_apply_page grey_content_section">
         <legend class="legend_2">Full Name</legend>
