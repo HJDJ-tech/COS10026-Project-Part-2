@@ -100,4 +100,6 @@ if (!empty($errors)) {
     echo "</ul><a href='apply.html'>Go back</a>";
     exit();
 }
+
+
 ?>
