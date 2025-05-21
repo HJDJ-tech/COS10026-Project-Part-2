@@ -1,12 +1,12 @@
 <?php
+// Connect to database
 $host = "localhost";
-$username = "root";
-$password = "";
-$database = "project_2"; // Replace with your actual DB name
+$user = "root";
+$pass = ""; // default for XAMPP
+$dbname = "project_2";                   //NOTE THIS IS FOR NEW APPLY PAGE DIRECTORY...<form method="post" action="process_eoi_project2_3.php" novalidate="novalidate">
 
-$conn = mysqli_connect($host, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$conn = new mysqli($host, $user, $pass, $dbname);
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
 ?>
