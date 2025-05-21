@@ -87,4 +87,17 @@ if (!preg_match("/^\d{8,12}$/", str_replace(' ', '', $phone))) $errors[] = "Inva
 if (empty($availability)) $errors[] = "Availability is required.";
 if (empty($workrights)) $errors[] = "Work Rights are required.";
 
+// Placeholder skills for this example
+$skill1 = isset($_POST['skill1']) ? clean_input($_POST['skill1']) : null;
+$skill2 = isset($_POST['skill2']) ? clean_input($_POST['skill2']) : null;
+$skill3 = isset($_POST['skill3']) ? clean_input($_POST['skill3']) : null;
+
+if (!empty($errors)) {
+    echo "<h2>Submission Failed</h2><ul>";
+    foreach ($errors as $error) {
+        echo "<li>" . $error . "</li>";
+    }
+    echo "</ul><a href='apply.html'>Go back</a>";
+    exit();
+}
 ?>
