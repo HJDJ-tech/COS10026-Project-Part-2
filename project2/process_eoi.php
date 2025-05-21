@@ -75,4 +75,16 @@ $validStates = [
     "ACT" => ['0']
 ];
 
+// Server-side validation
+if (!preg_match("/^[A-Za-z]{1,20}$/", $firstName)) $errors[] = "First name must be max 20 letters.";
+if (!preg_match("/^[A-Za-z]{1,20}$/", $lastName)) $errors[] = "Last name must be max 20 letters.";
+if (!isset($validStates[$state])) $errors[] = "Invalid state.";
+if (!preg_match("/^\d{4}$/", $postcode) || !in_array($postcode[0], $validStates[$state])) {
+    $errors[] = "Postcode doesn't match the state.";
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email address.";
+if (!preg_match("/^\d{8,12}$/", str_replace(' ', '', $phone))) $errors[] = "Invalid phone number.";
+if (empty($availability)) $errors[] = "Availability is required.";
+if (empty($workrights)) $errors[] = "Work Rights are required.";
+
 ?>
