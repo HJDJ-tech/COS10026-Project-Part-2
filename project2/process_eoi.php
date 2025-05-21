@@ -41,4 +41,38 @@ $conn->query("
     );
 ");
 
+// Helper function
+function clean_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
+// Validate & sanitize input
+$errors = [];
+
+$jobRef = isset($_POST['referencenumber']) ? clean_input($_POST['referencenumber']) : '';
+$firstName = isset($_POST['given']) ? clean_input($_POST['given']) : '';
+$lastName = isset($_POST['family']) ? clean_input($_POST['family']) : '';
+$gender = isset($_POST['Gender']) ? clean_input($_POST['Gender']) : '';
+$dob = isset($_POST['d']) ? clean_input($_POST['d']) : '';
+$address = isset($_POST['Adress']) ? clean_input($_POST['Adress']) : '';
+$suburb = isset($_POST['suburb']) ? clean_input($_POST['suburb']) : '';
+$state = isset($_POST['state']) ? clean_input($_POST['state']) : '';
+$postcode = isset($_POST['postcode']) ? clean_input($_POST['postcode']) : '';
+$email = isset($_POST['email']) ? clean_input($_POST['email']) : '';
+$phone = isset($_POST['phone']) ? clean_input($_POST['phone']) : '';
+$availability = isset($_POST['availability']) ? clean_input($_POST['availability']) : '';
+$workrights = isset($_POST['workrights']) ? clean_input($_POST['workrights']) : '';
+$otherSkills = isset($_POST['description']) ? clean_input($_POST['description']) : '';
+
+$validStates = [
+    "VIC" => ['3', '8'],
+    "NSW" => ['1', '2'],
+    "QLD" => ['4', '9'],
+    "NT" => ['0'],
+    "WA" => ['6'],
+    "SA" => ['5'],
+    "TAS" => ['7'],
+    "ACT" => ['0']
+];
+
 ?>
