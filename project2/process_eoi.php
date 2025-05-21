@@ -1,8 +1,12 @@
 <?php
 // Redirect if accessed directly
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: apply.html");
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   
+
+    header("Location: apply.php");
     exit();
+
+
 }
 
 // Connect to database
@@ -95,6 +99,8 @@ if (empty($workrights)) $errors[] = "Work Rights are required.";
 $skill1 = isset($_POST['skill1']) ? clean_input($_POST['skill1']) : null;
 $skill2 = isset($_POST['skill2']) ? clean_input($_POST['skill2']) : null;
 $skill3 = isset($_POST['skill3']) ? clean_input($_POST['skill3']) : null;
+
+$sql = "INSERT INTO eoi_project2_3 (JobReferenceNumber, FirstName, LastName, StreetAddress, SuburbTown, State, Postcode, Email, PhoneNumber, Availability, WorkRights, Skill1, Skill2, Skill3, OtherSkills) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
 
 if (!empty($errors)) {
     echo "<h2>Submission Failed</h2><ul>";
