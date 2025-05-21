@@ -17,9 +17,9 @@
       <nav>
         <ul class="menu">
           <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="jobs.php">Jobs</a></li>
+          <li><a href="apply.php">Apply</a></li>
+          <li><a href="about.php">About</a></li>
           <li><a href="manage.php">Manage</a></li>
         </ul>
       </nav>
@@ -36,7 +36,7 @@ session_start();
     <div class="banner">
       <div class="bannercontent">
         <div class="bannertext">Careers at HJDJ IT </div>
-        <form action="jobs.html">
+        <form action="jobs.php">
           <button type="submit" class="btn">Explore Careers</button>
         </form>
       </div>

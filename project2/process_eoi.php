@@ -4,17 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: apply.html");
     exit();
 }
+$mysql = require __DIR__ . "/settings.php";
 
-// Connect to database
-$host = "localhost";
-$user = "root";
-$pass = ""; // default for XAMPP
-$dbname = "eoi_project2_3_database";                   //NOTE THIS IS FOR NEW APPLY PAGE DIRECTORY...<form method="post" action="process_eoi_project2_3.php" novalidate="novalidate">
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
-}
 
 // Create table FIRST
 $conn->query("
@@ -78,10 +69,14 @@ $validStates = [
 // Server-side validation
 if (!preg_match("/^[A-Za-z]{1,20}$/", $firstName)) $errors[] = "First name must be max 20 letters.";
 if (!preg_match("/^[A-Za-z]{1,20}$/", $lastName)) $errors[] = "Last name must be max 20 letters.";
-if (!isset($validStates[$state])) $errors[] = "Invalid state.";
-if (!preg_match("/^\d{4}$/", $postcode) || !in_array($postcode[0], $validStates[$state])) {
+if (!preg_match("/^\d{4}$/", $postcode)) {
+    $errors[] = "Postcode must be a 4-digit number.";
+} elseif (empty($state) || !isset($validStates[$state]) || !is_array($validStates[$state])) {
+    $errors[] = "State is invalid or does not match a valid set of states.";
+} elseif (!in_array($postcode[0], $validStates[$state])) {
     $errors[] = "Postcode doesn't match the state.";
 }
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email address.";
 if (!preg_match("/^\d{8,12}$/", str_replace(' ', '', $phone))) $errors[] = "Invalid phone number.";
 if (empty($availability)) $errors[] = "Availability is required.";
@@ -97,7 +92,7 @@ if (!empty($errors)) {
     foreach ($errors as $error) {
         echo "<li>" . $error . "</li>";
     }
-    echo "</ul><a href='apply.html'>Go back</a>";
+    echo "</ul><a href='apply.php'>Go back</a>";
     exit();
 }
 

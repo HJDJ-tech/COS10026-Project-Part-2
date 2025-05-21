@@ -21,9 +21,9 @@
         <nav>
             <ul class="menu">
              <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="jobs.php">Jobs</a></li>
+          <li><a href="apply.php">Apply</a></li>
+          <li><a href="about.php">About</a></li>
           <li><a href="manage.php">Manage</a></li>
             </ul>
         </nav>
@@ -32,7 +32,7 @@
 
 <main>
 
-    <form method="post" action="process_eoi_project2_3.php" novalidate="novalidate">
+    <form method="post" action="process_eoi.php" novalidate="novalidate">
         <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
         <fieldset class="job_apply_page grey_content_section">
         <legend class="legend_2">Full Name</legend>
