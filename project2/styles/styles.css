@@ -317,28 +317,6 @@ nav ul.menu li a {
   border-top: none;
 }
 
-.container .quote::before,
-.container .quote::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 50px;
-  border: 4px solid black;
-}
-
-.container .quote::before {
-  top: 0;
-  right: 0;
-  border-left: none;
-  border-bottom: none;
-}
-
-.container .quote::after {
-  bottom: 0;
-  left: 0;
-  border-right: none;
-  border-top: none;
-}
 
 .youtube23{
     display: flex;
