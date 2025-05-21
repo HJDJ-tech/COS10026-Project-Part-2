@@ -1,17 +1,12 @@
 <?php
-
 $host = "localhost";
-$dbname = "profile_page";
 $username = "root";
 $password = "";
+$database = "exhibition"; // Replace with your actual DB name
 
-$mysqli = new mysqli(hostname: $host,
-                     username: $username,
-                     password: $password,
-                     database: $dbname);
-                     
-if ($mysqli->connect_errno) {
-    die("Connection error: " . $mysqli->connect_error);
+$conn = mysqli_connect($host, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-return $mysqli;
+?>
