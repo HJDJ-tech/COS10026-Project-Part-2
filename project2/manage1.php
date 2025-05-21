@@ -16,7 +16,7 @@
       <!-- Site navigation -->
       <nav>
         <ul class="menu">
-            <li>Manager site</li>
+            <li>MANAGER SITE</li>
           <li><a href="index.php">Logout</a></li>
         
         </ul>
