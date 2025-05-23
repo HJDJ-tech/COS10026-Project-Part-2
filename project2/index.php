@@ -103,10 +103,10 @@ session_start();
         <h2 style="color: aliceblue">Ready to join us?</h2>
       </div>
       <div class="readybutton">
-        <form action="apply.html">
+        <form action="apply.php">
           <button type="submit" class="btn">Get Started</button>
         </form>
-        <form action="jobs.html">
+        <form action="jobs.php">
           <button type="submit" class="btn">Explore Careers</button>
         </form>
       </div>
