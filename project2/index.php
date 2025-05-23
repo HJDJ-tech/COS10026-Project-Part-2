@@ -54,6 +54,7 @@ session_start();
       </p>
     </div>
     </div>
+        <!-- Embedded YouTube video  -->
     <div class="youtube23">
     <iframe class="youtube" src="https://www.youtube.com/embed/91tdkSp6ahA?si=7hIDFtaFurbIjBH-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
@@ -102,6 +103,7 @@ session_start();
       <div class="Ready">
         <h2 style="color: aliceblue">Ready to join us?</h2>
       </div>
+          <!-- Navigation to apply and jobs buttons -->
       <div class="readybutton">
         <form action="apply.php">
           <button type="submit" class="btn">Get Started</button>

@@ -26,7 +26,7 @@
       </nav>
     </div>
 
-
+  <!-- Log in site-->
 <?php
 session_start();
 
@@ -63,7 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "SQL error: " . $conn->error;
     }
 }
+     
 ?>
+
 <p>Manager Login</p>
 <form method="post" action="manage.php">
     Manager Email: <input type="text" name="email" required><br>
