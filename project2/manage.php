@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
      
 ?>
-
+<div class= login>
 <p>Manager Login</p>
 <form method="post" action="manage.php">
     Manager Email: <input type="text" name="email" required><br>
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Password: <input type="password" name="password" required><br>
     <input type="submit" value="Login">
 </form>
-
+</div>
 
      <div class="footer">
       <!-- Jira link-->

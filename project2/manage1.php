@@ -93,7 +93,7 @@ if ($action == 'list_all') {
     <button name="action" value="list_by_name">List EOIs</button><br><br>
   <p>Delete Reference</p>
     Job Reference to Delete: <input type="text" name="job_ref">
-    <button name="action" value="delete_by_jobref">Delete EOIs by Job Reference</button><br><br>
+    <button name="action" value="delete_by_jobref">Delete EOIs</button><br><br>
    <p>Change Status</p>
    Applicant Email: <input type="text" name="email"> New Status:
     <select name="status">
