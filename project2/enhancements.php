@@ -15,8 +15,8 @@
      <?php include "nav.inc";?>
     </div>
         <main>
-            <section id="enhancement_section">
-                <h1>Enhancements</h1>
+            <section id="black_section">
+                <h1 class="white_text">Enhancements</h1>
             </section>
 
             <section id="grey_section">
