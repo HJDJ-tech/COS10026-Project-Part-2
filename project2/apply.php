@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
-  <meta name="keywords" content="HTML5, tags" />
-  <meta name="author" content="A Lecturer"  />
-  <title>HJDJ IT</title>
-  
-  <link rel="stylesheet" href="styles/styles.css">
-
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HJDJ IT, Apply, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
+    <title>HJDJ IT Apply</title>
+    <link rel="icon" type="image/png" href="images/logoweb.png">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
     <!-- div header -->
     <?php include "header.inc";?>
         <!-- Site navigation -->
-         <nav>
-        <ul class="menu">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="jobs.php">Jobs</a></li>
-            <li><a href="apply.php">Apply</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="manage.php">Manage</a></li>
-        </ul>
-        </nav>
+        <?php include "nav.inc";?>
     </div>
 
 
