@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2025 at 01:59 PM
+-- Generation Time: May 26, 2025 at 02:41 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -157,6 +157,154 @@ INSERT INTO `eoi` (`EOInumber`, `JobReferenceNumber`, `FirstName`, `LastName`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `job_id` varchar(5) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `reports_to` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`job_id`, `title`, `description`, `reports_to`) VALUES
+('CS507', 'Cybersecurity Analyst\r\n', 'We are seeking a vigilant and detail-oriented Cybersecurity Analyst to join our tech company. In this role, you will monitor and protect the organisation’s digital assets, identify vulnerabilities, and respond to security incidents. The ideal candidate will have a strong technical foundation, a passion for cybersecurity, and a proactive approach to safeguarding systems and data.\r\n\r\n', 'Cybersecurity Manager'),
+('DA301', 'Data Analyst', 'We are looking for a skilled Data Analyst to join our tech company. The role involves analyzing large datasets, providing insights, and supporting cross-functional teams with data-driven recommendations. The ideal candidate will have strong data analysis skills and the ability to communicate findings clearly.\r\n\r\n\r\n\r\n', 'Director of Technology'),
+('IT102', 'IT Support Specialist\r\n', 'We are looking for a reliable and proactive IT Support Specialist to join our tech company. This role involves providing technical assistance, troubleshooting hardware and software issues, and supporting internal teams with IT-related needs. The ideal candidate will have strong problem-solving skills, technical knowledge, and a commitment to excellent customer service.\r\n\r\n', 'IT Operations Manager\r\n'),
+('SE401', 'Software Engineer', 'We are seeking a talented and motivated Software Engineer to join our growing tech team. The ideal candidate will design, develop, and maintain high-quality software applications. You will collaborate with cross-functional teams to deliver innovative and scalable solutions. This is an excellent opportunity for someone passionate about coding and looking to make an impact in a dynamic tech environment.\r\n\r\n', 'Director of Technology\r\n'),
+('UX204', 'UX Designer\r\n', 'We are seeking a creative and user-focused UX Designer to join our tech company. This role involves designing seamless user experiences, conducting user research, and collaborating with cross-functional teams to create intuitive digital interfaces. The ideal candidate will have a passion for design thinking, empathy for users, and a strong portfolio of UX design work.\r\n\r\n', 'Director of Product Design\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `preferred_skills`
+--
+
+CREATE TABLE `preferred_skills` (
+  `job_id` varchar(5) NOT NULL,
+  `bp1` text NOT NULL,
+  `bp2` text DEFAULT NULL,
+  `bp3` text DEFAULT NULL,
+  `bp4` text DEFAULT NULL,
+  `bp5` text DEFAULT NULL,
+  `bp6` text DEFAULT NULL,
+  `bp7` text DEFAULT NULL,
+  `bp8` text DEFAULT NULL,
+  `bp9` text DEFAULT NULL,
+  `bp10` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `preferred_skills`
+--
+
+INSERT INTO `preferred_skills` (`job_id`, `bp1`, `bp2`, `bp3`, `bp4`, `bp5`, `bp6`, `bp7`, `bp8`, `bp9`, `bp10`) VALUES
+('CS507', 'Experience with tools like Splunk, Wireshark, or Nessus.\r\n', 'Familiarity with cloud security (AWS, Azure, or Google Cloud).\r\n', 'Knowledge of scripting languages (Python, Bash, or PowerShell).\r\n', 'Understanding of data privacy regulations (e.g., GDPR, ISO 27001).\r\n', 'Cybersecurity certifications (e.g., CompTIA Security+, CEH, CISSP).\r\n', 'Interest in threat intelligence and staying current with emerging threats.\r\n', NULL, NULL, NULL, NULL),
+('DA301', 'Experience with Tableau or Power BI.\r\n', 'Basic knowledge of Python or R.\r\n', 'Familiarity with cloud data tools.\r\n', 'Understanding of data privacy rules.\r\n', 'Experience working in teams.\r\n', 'Interest in learning new tools.\r\n', NULL, NULL, NULL, NULL),
+('IT102', 'Experience with ticketing systems like Jira, Zendesk, or Freshservice.\r\n', 'Familiarity with Active Directory and Microsoft 365 administration.\r\n', 'Basic scripting knowledge (e.g., PowerShell, Bash).\r\n', 'Knowledge of cybersecurity best practices.\r\n', 'Experience supporting remote teams and cloud-based systems.\r\n', 'Certifications such as CompTIA A+, ITIL, or Microsoft Fundamentals.\r\n', NULL, NULL, NULL, NULL),
+('SE401', 'Experience with cloud services like AWS or Google Cloud.\r\n', 'Used tools like Docker or Kubernetes before.\r\n', 'Familiar with setting up automated testing or deployment.\r\n', 'Worked in an Agile team.\r\n', 'Basic knowledge of databases (SQL or NoSQL).\r\n', NULL, NULL, NULL, NULL, NULL),
+('UX204', 'Basic knowledge of HTML, CSS, and responsive design principles.\r\n', 'Experience with design systems and accessibility standards.\r\n', 'Familiarity with agile or lean UX processes.\r\n', 'Understanding of data-driven design.\r\n', 'Ability to present and explain design ideas to various stakeholders.\r\n', 'Willingness to learn and adapt to new tools and trends.\r\n', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `required_skills`
+--
+
+CREATE TABLE `required_skills` (
+  `job_id` varchar(5) NOT NULL,
+  `bp1` text NOT NULL,
+  `bp2` text DEFAULT NULL,
+  `bp3` text DEFAULT NULL,
+  `bp4` text DEFAULT NULL,
+  `bp5` text DEFAULT NULL,
+  `bp6` text DEFAULT NULL,
+  `bp7` text DEFAULT NULL,
+  `bp8` text DEFAULT NULL,
+  `bp9` text DEFAULT NULL,
+  `bp10` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `required_skills`
+--
+
+INSERT INTO `required_skills` (`job_id`, `bp1`, `bp2`, `bp3`, `bp4`, `bp5`, `bp6`, `bp7`, `bp8`, `bp9`, `bp10`) VALUES
+('CS507', 'Bachelor’s degree in Cybersecurity, Information Technology, or a related field.\r\n', '2+ years of experience in a cybersecurity or related IT role.\r\n', 'Understanding of firewalls, antivirus, SIEM tools, and network security protocols.\r\n', 'Strong analytical and problem-solving skills.\r\n', 'Knowledge of cybersecurity frameworks and best practices.\r\n', 'Clear communication skills and ability to document findings.\r\n', 'Ability to work under pressure in incident response situations.\r\n', NULL, NULL, NULL),
+('DA301', 'Bachelor’s degree in a related field.\r\n', '2+ years of data analysis experience.\r\n', 'Strong skills in SQL.\r\n', 'Experience with Excel and spreadsheets.\r\n', 'Good problem-solving skills.\r\n', 'Clear communication skills.\r\n', 'Ability to work with large datasets.\r\n', NULL, NULL, NULL),
+('IT102', 'Diploma or Bachelor’s degree in IT, Computer Science, or a related field.\r\n', '2+ years of experience in a technical support role.\r\n', 'Strong troubleshooting skills across Windows and macOS environments.\r\n', 'Basic understanding of networking concepts and tools.\r\n', 'Clear verbal and written communication skills.\r\n', 'Excellent customer service and time management abilities.\r\n', 'Ability to work independently and prioritise tasks.\r\n', NULL, NULL, NULL),
+('SE401', 'Bachelor’s degree in Computer Science, Engineering, or a related field.\r\n', '2+ years of professional software development experience.\r\n', 'Proficiency in one or more programming languages (e.g., Java, Python, C#, JavaScript).\r\n', 'Experience with version control tools, mainly Git.\r\n', 'Excellent communication skills and ability to collaborate with team members.\r\n', NULL, NULL, NULL, NULL, NULL),
+('UX204', 'Bachelor’s degree in Design, HCI, or a related field.\r\n', '2+ years of experience in UX or product design.\r\n', 'Proficiency in Figma, Adobe XD, or similar tools.\r\n', 'Strong portfolio showcasing UX design projects.\r\n', 'Understanding of user research methods.\r\n', 'Excellent problem-solving and communication skills.\r\n', 'Ability to work collaboratively in a fast-paced environment.\r\n', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `responsibilities`
+--
+
+CREATE TABLE `responsibilities` (
+  `job_id` varchar(5) NOT NULL,
+  `bp1` text NOT NULL,
+  `bp2` text DEFAULT NULL,
+  `bp3` text DEFAULT NULL,
+  `bp4` text DEFAULT NULL,
+  `bp5` text DEFAULT NULL,
+  `bp6` text DEFAULT NULL,
+  `bp7` text DEFAULT NULL,
+  `bp8` text DEFAULT NULL,
+  `bp9` text DEFAULT NULL,
+  `bp10` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `responsibilities`
+--
+
+INSERT INTO `responsibilities` (`job_id`, `bp1`, `bp2`, `bp3`, `bp4`, `bp5`, `bp6`, `bp7`, `bp8`, `bp9`, `bp10`) VALUES
+('', 'Manage network-related projects, including design, planning, execution, and handover to Operations.', 'Manage project timelines, identify and resolve issues while ensuring minimal impact on BAU operations.', 'Adhere to network policies, procedures, and security best practices during project deployments.', 'Collaborate with stakeholders to analyse customer needs and translate them into effective network solutions.', '', '', '', '', '', ''),
+('CS507', 'Monitor networks and systems for security breaches and suspicious activity.\r\n', 'Investigate and respond to security alerts and incidents in a timely manner.\r\n', 'Conduct vulnerability assessments and risk analysis.\r\n', 'Assist with the implementation of security measures and controls.\r\n', 'Maintain and update security tools, firewalls, and intrusion detection systems.\r\n', 'Collaborate with IT and development teams to ensure secure practices.\r\n', NULL, NULL, NULL, NULL),
+('IT102', 'Respond to technical support requests via email, phone, and ticketing systems.\r\n', 'Diagnose and resolve hardware, software, and network issues for staff.\r\n', 'Install, configure, and maintain desktops, laptops, printers, and other peripherals.\r\n', 'Provide onboarding IT setup and offboarding procedures for staff members.\r\n', 'Maintain inventory of IT assets and ensure regular updates of systems.\r\n', 'Escalate unresolved issues to senior IT staff or vendors when necessary.\r\n', NULL, NULL, NULL, NULL),
+('SE401', 'Design, develop, and test software solutions across various platforms.\r\n', 'Collaborate with cross-functional teams to gather requirements and deliver high-quality software solutions.\r\n', 'Troubleshoot and debug software issues, providing timely fixes and enhancements.\r\n', 'Continuously improve and optimize application performance.\r\n', NULL, NULL, NULL, NULL, NULL, NULL),
+('UX204', 'Conduct user research and usability testing to inform design decisions.\r\n', 'Create wireframes, prototypes, and user flows for digital products.\r\n', 'Collaborate with developers, product managers, and stakeholders to ensure user-centred design solutions.\r\n', 'Iterate on designs based on feedback and usability insights.\r\n', 'Maintain consistency in design systems and interface elements.\r\n', 'Ensure accessibility and responsive design standards are met.\r\n', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salary_and_benefits`
+--
+
+CREATE TABLE `salary_and_benefits` (
+  `job_id` varchar(5) NOT NULL,
+  `bp1` text NOT NULL,
+  `bp2` text DEFAULT NULL,
+  `bp3` text DEFAULT NULL,
+  `bp4` text DEFAULT NULL,
+  `bp5` text DEFAULT NULL,
+  `bp6` text DEFAULT NULL,
+  `bp7` text DEFAULT NULL,
+  `bp8` text DEFAULT NULL,
+  `bp9` text DEFAULT NULL,
+  `bp10` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `salary_and_benefits`
+--
+
+INSERT INTO `salary_and_benefits` (`job_id`, `bp1`, `bp2`, `bp3`, `bp4`, `bp5`, `bp6`, `bp7`, `bp8`, `bp9`, `bp10`) VALUES
+('CS507', 'Salary Range: $95,000 - $115,000.\r\n', '6 weeks of paid time off.\r\n', 'Super: 13.75%.\r\n', 'Flexible work arrangements.\r\n', 'Remote work options.\r\n', 'Comprehensive health cover.\r\n', 'Paid training, certifications, and upskilling opportunities.\r\n', 'Wellness and fitness programs.\r\n', 'Modern security tools and software provided.\r\n', NULL),
+('DA301', 'Salary Range: $90,000 - $105,000.\r\n', '6 weeks of paid time off.\r\n', 'Super: 13.75%.\r\n', 'Flexible work arrangements.\r\n', 'Remote work options.\r\n', 'Comprehensive health cover.\r\n', 'Paid training and upskilling.\r\n', 'Wellness and fitness programs.\r\n', 'Modern tools and software.\r\n', NULL),
+('IT102', 'Salary Range: $80,000 - $95,000.\r\n', '6 weeks of paid time off.\r\n', 'Super: 13.75%.\r\n', 'Flexible work arrangements.\r\n', 'Remote support options available.\r\n', 'Comprehensive health cover.\r\n', 'Paid certifications and training programs.\r\n', 'Wellness and fitness programs.\r\n', 'Modern tools and IT equipment provided.\r\n', NULL),
+('SE401', 'Salary Range: $100,000 - $125,000.\r\n', '6 weeks of paid time off.\r\n', 'Super: 11.5%.\r\n', 'Flexible work hours.\r\n', 'Remote and hybrid options.\r\n', 'Paid training and courses.\r\n', 'Health and wellness programs.\r\n', 'Employee support programs.\r\n', NULL, NULL),
+('UX204', 'Salary Range: $90,000 - $105,000.\r\n', '6 weeks of paid time off.\r\n', 'Super: 13.75%.\r\n', 'Flexible work arrangements.\r\n', 'Remote work options.\r\n', 'Comprehensive health cover.\r\n', 'Paid training and upskilling.\r\n', 'Wellness and fitness programs.\r\n', 'Modern tools and software.\r\n', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -182,6 +330,36 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 --
 ALTER TABLE `eoi`
   ADD PRIMARY KEY (`EOInumber`);
+
+--
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `preferred_skills`
+--
+ALTER TABLE `preferred_skills`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `required_skills`
+--
+ALTER TABLE `required_skills`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `responsibilities`
+--
+ALTER TABLE `responsibilities`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `salary_and_benefits`
+--
+ALTER TABLE `salary_and_benefits`
+  ADD PRIMARY KEY (`job_id`);
 
 --
 -- Indexes for table `users`
