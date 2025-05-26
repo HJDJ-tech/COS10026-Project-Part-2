@@ -5,35 +5,41 @@
     <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
     <title>HJDJ IT</title>
     <link rel="stylesheet" href="styles/styles.css">
+     <link rel="stylesheet" href="styles/loginstyle.css">
     <link rel="icon" type="image/png" href="images/logoweb.png">
+    <style>
+      select[name^="status"] {
+        width: 70px;
+        padding: 4px;
+        font-size: 12px;
+      }
+    </style>
   </head>
   <body>
-    <!-- div header -->
     <div class="header">
       <div class="logo-container">
         <img src="images/image.png" alt="HJDJ Logo" />
       </div>
-      <!-- Site navigation -->
       <nav>
         <ul class="menu">
             <li>MANAGER SITE</li>
-          <li><a href="index.php">Logout</a></li>
-        
+            <li><a href="index.php">Logout</a></li>
         </ul>
       </nav>
     </div>
+    <div class="table-container">
 <?php
-// manage.php - A management interface for EOIs in the 'project_2' database
-
 $host = 'localhost';
-$user = 'root';  // Change as needed
-$password = ''; // Change as needed
+$user = 'root';
+$password = '';
 $dbname = 'project_2';
 
 $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$conn->query("UPDATE eoi SET Status = 'New' WHERE Status IS NULL OR Status = ''");
 
 $action = $_POST['action'] ?? ($_GET['action'] ?? '');
 $result = "";
@@ -54,25 +60,26 @@ if ($action == 'list_all') {
     $job_ref = $conn->real_escape_string($_POST['job_ref']);
     $conn->query("DELETE FROM eoi WHERE JobReferenceNumber = '$job_ref'");
     echo "<p>All EOIs for job reference $job_ref have been deleted.</p>";
-} elseif ($action == 'update_status' && !empty($_POST['email']) && !empty($_POST['status'])) {
-    $email = $conn->real_escape_string($_POST['email']);
-    $status = $conn->real_escape_string($_POST['status']);
-    $conn->query("UPDATE eoi SET Status = '$status' WHERE Email = '$email'");
-    echo "<p>Status updated for $email to $status.</p>";
+} elseif ($action == 'update_status' && isset($_POST['status']) && isset($_POST['eoi_number'])) {
+    $eoi_number = intval($_POST['eoi_number']);
+    $newStatus = $conn->real_escape_string($_POST['status']);
+    $conn->query("UPDATE eoi SET Status = '$newStatus' WHERE EOInumber = $eoi_number");
+    echo "<script>window.location.href=window.location.href;</script>";
+}
+if ($action == 'bulk_update_status' && isset($_POST['status'])) {
+    foreach ($_POST['status'] as $eoi_number => $status_value) {
+        $eoi_number = intval($eoi_number);
+        $status_value = $conn->real_escape_string($status_value);
+        $conn->query("UPDATE eoi SET Status = '$status_value' WHERE EOInumber = $eoi_number");
+    }
+    echo "<script>window.location.href=window.location.href;</script>";
+     echo "<div class='success-message'>Status updated successfully.</div>";
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Manage EOIs</title>
-</head>
-<body>
 <h1>EOI Management</h1>
-<p>List all recorded data</p>
 <form method="post">
     <button name="action" value="list_all">List All EOIs</button><br><br>
 </form>
-
 <form method="get">
     <label for="job_ref">Job Reference Filter:</label>
     <select name="job_ref" onchange="this.form.submit()">
@@ -87,94 +94,83 @@ if ($action == 'list_all') {
     <noscript><input type="submit" value="Filter"></noscript>
 </form>
 <br>
-<p>Find Applicant</P>
+<p>Find Applicant</p>
 <form method="post">
     First Name: <input type="text" name="first_name"> Last Name: <input type="text" name="last_name">
     <button name="action" value="list_by_name">List EOIs</button><br><br>
   <p>Delete Reference</p>
     Job Reference to Delete: <input type="text" name="job_ref">
     <button name="action" value="delete_by_jobref">Delete EOIs</button><br><br>
-   <p>Change Status</p>
-   Applicant Email: <input type="text" name="email"> New Status:
-    <select name="status">
-        <option value="Choose Status">--Choose Status--</option>
-        <option value="New">New</option>
-        <option value="Current">Current</option>
-        <option value="Final">Final</option>
-    </select>
-    <button name="action" value="update_status">Update Status</button>
 </form>
-
 <?php
 if ($result && $result instanceof mysqli_result) {
-    echo "<table border='1'><tr>
+    echo "<form method='post'><table border='1'><tr>
         <th>EOI Number</th><th>JobRef</th><th>First</th><th>Last</th><th>Gender</th><th>DOB</th>
         <th>Street</th><th>Suburb</th><th>State</th><th>Postcode</th>
         <th>Email</th><th>Phone</th><th>Availability</th><th>WorkRights</th><th>Skills</th><th>Status</th>
     </tr>";
+
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>{$row['EOInumber']}</td><td>{$row['JobReferenceNumber']}</td><td>{$row['FirstName']}</td><td>{$row['LastName']}</td>
-              <td>{$row['Gender']}</td><td>{$row['DOB']}</td><td>{$row['StreetAddress']}</td>
-              <td>{$row['SuburbTown']}</td><td>{$row['State']}</td><td>{$row['Postcode']}</td>
-              <td>{$row['Email']}</td><td>{$row['PhoneNumber']}</td><td>{$row['Availability']}</td>
-              <td>{$row['WorkRights']}</td><td>{$row['OtherSkills']}</td><td>{$row['Status']}</td></tr>";
+        $currentStatus = htmlspecialchars($row['Status'] ?? 'New');
+        echo "<tr>
+            <td>{$row['EOInumber']}</td>
+            <td>{$row['JobReferenceNumber']}</td>
+            <td>{$row['FirstName']}</td>
+            <td>{$row['LastName']}</td>
+            <td>{$row['Gender']}</td>
+            <td>{$row['DOB']}</td>
+            <td>{$row['StreetAddress']}</td>
+            <td>{$row['SuburbTown']}</td>
+            <td>{$row['State']}</td>
+            <td>{$row['Postcode']}</td>
+            <td>{$row['Email']}</td>
+            <td>{$row['PhoneNumber']}</td>
+            <td>{$row['Availability']}</td>
+            <td>{$row['WorkRights']}</td>
+            <td>{$row['OtherSkills']}</td>
+            <td>
+                <select name='status[{$row['EOInumber']}]'>
+                    <option value='New'" . ($currentStatus == 'New' ? " selected" : "") . ">New</option>
+                    <option value='Current'" . ($currentStatus == 'Current' ? " selected" : "") . ">Current</option>
+                    <option value='Final'" . ($currentStatus == 'Final' ? " selected" : "") . ">Final</option>
+                </select>
+            </td>
+        </tr>";
     }
-    echo "</table>";
+    echo "</table><br><button name='action' value='bulk_update_status'>Update Status</button></form>";
 }
+
 $conn->close();
 ?>
-</body>
-</html>
-
-
-     <div class="footer">
-      <!-- Jira link-->
-      <div class="logofooter">
-        <img src="images/image1.jpg" alt="HJDJ Logo" />
-      </div>
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Contact</h3>
-        <div class="link">
-          <a
-            href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9"
-          >
-            Jira Project
-          </a>
-        </div>
-        <div class="email">
-          Email:
-          <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Tel: 408-486-1405</a>
-        </div>
-      </div>
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Company</h3>
-        <div class="link">
-          <a>
-            About us
-          </a>
-        </div>
-        <div class="email">
-          
-          <a>Event </a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Terms and conditions</a>
-        </div>
-      </div>
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Follow Us</h3>
-        <div class="link">
-          <a href="https://github.com/HJDJ-tech/COS10026-Project-Part-1" target="_blank">GitHub</a>
-        </div>
-        <div class="email">
-          <a>Instagram</a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Twitter</a>
-        </div>
-      </div>
+</div>
+<div class="footer">
+  <div class="logofooter">
+    <img src="images/image1.jpg" alt="HJDJ Logo" />
+  </div>
+  <div class="objfooter">
+    <h3 style="margin-bottom: 15px">Contact</h3>
+    <div class="link">
+      <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira Project</a>
     </div>
-  
+    <div class="email">
+      Email: <a href="mailto:HJDJcarrier@hjdj.com.au">HJDJcarrier@hjdj.com.au</a>
+    </div>
+    <div class="megaphonetelephone">
+      <a>Tel: 408-486-1405</a>
+    </div>
+  </div>
+  <div class="objfooter">
+    <h3 style="margin-bottom: 15px">Company</h3>
+    <div class="link"><a>About us</a></div>
+    <div class="email"><a>Event</a></div>
+    <div class="megaphonetelephone"><a>Terms and conditions</a></div>
+  </div>
+  <div class="objfooter">
+    <h3 style="margin-bottom: 15px">Follow Us</h3>
+    <div class="link"><a href="https://github.com/HJDJ-tech/COS10026-Project-Part-1" target="_blank">GitHub</a></div>
+    <div class="email"><a>Instagram</a></div>
+    <div class="megaphonetelephone"><a>Twitter</a></div>
+  </div>
+</div>
+</body>
+</html> 
