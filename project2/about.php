@@ -45,13 +45,13 @@
             <h2>Member Contribution</h2>
               <dl>
                 <dt>Harry's Contribution:</dt>
-                <dd>Converting pages to php, include files, and About Page</dd>
+                <dd>Converting pages to php, include files, Enhancements Page, Login attempts Enhancement, and About Page</dd>
                 <dt>Josh's Contribution:</dt>
                 <dd>Jobs Page, Jobs Table in MySQL, and Navigation Bar</dd>
                 <dt>Diesel's Contribution:</dt>
                 <dd>Apply Page, EOI Table in MySQL, Process EOI in php</dd>
                 <dt>Jerry's Contribution:</dt>
-                <dd>Home Page, Manage Page, and Footer</dd>
+                <dd>Home Page, Manage Page, Password checker Enhancement, and Footer</dd>
               </dl>
           </section>
 
