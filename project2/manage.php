@@ -31,8 +31,8 @@ if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) { //
   $remaining = $_SESSION["banned_login"] - time();
   $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
 } 
-elseif (isset($_SESSION["banned_login"]) && time() >= $_SESSION["banned_login"]) {
-  unset($_SESSION["banned_login"]);
+elseif (isset($_SESSION["banned_login"]) && time() >= $_SESSION["banned_login"]) { 
+  unset($_SESSION["banned_login"]); // resets the banned login and sets attempts to 0 after the ban expires
   $_SESSION["attempts"] = 0;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
