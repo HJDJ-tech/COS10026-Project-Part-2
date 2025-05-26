@@ -58,7 +58,6 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       }
     }
-  }
 ?>
 <div class="login-page">
   <div class="login">
