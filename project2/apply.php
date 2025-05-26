@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
-  <meta name="keywords" content="HTML5, tags" />
-  <meta name="author" content="A Lecturer"  />
-  <title>HJDJ IT</title>
-  
-  <link rel="stylesheet" href="styles/styles.css">
-
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HJDJ IT, Apply, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
+    <title>HJDJ IT Apply</title>
+    <link rel="icon" type="image/png" href="images/logoweb.png">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
