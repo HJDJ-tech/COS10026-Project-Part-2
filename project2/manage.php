@@ -19,24 +19,17 @@
 <?php
 session_start();
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "project_2";
+require_once("settings.php");
+
 $error = "";
+$inputError = "";
 
 
 if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) { // checks to see if the user is currently banned, and looks to see if the time is less than the banned login time w3schools.com/php/func_date_time.asp
   $remaining = $_SESSION["banned_login"] - time();
   $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
-} else {
-    $conn = new mysqli($host, $user, $pass, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+} 
+elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
