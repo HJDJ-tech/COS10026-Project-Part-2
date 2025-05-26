@@ -44,7 +44,7 @@
            <?php if (mysqli_num_rows($result_jobs) > 0): ?>
         <div id="job_list">
             <?php while ($row = mysqli_fetch_assoc($result_jobs)): ?>
-                <section class="job_position grey_content_section" id=<?=$row['job_id']?>>
+            <section class="job_position grey_content_section" id="<?= $row['job_id'] ?>">
                 <h2 class='job_title jobs_page_heading'><?= $row['title'] ?></h2>
 
                     <section class="job_outline">
