@@ -577,8 +577,7 @@ dd {
 }
 
 #SE401 {
-    color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/software_engineer.png");
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/software_engineer.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -592,8 +591,7 @@ dd {
 }
 
 #IT102 {
-    color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/it_support.png");
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/it_support.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
