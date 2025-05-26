@@ -10,20 +10,9 @@
     
     <body>
     <!-- div header -->
-    <div class="header">
-      <div class="logo-container">
-          <img src="images/image.png" alt="HJDJ Logo">
-      </div>
+    <?php include "header.inc";?>
       <!-- Site navigation -->
-      <nav>
-          <ul class="menu">
-            <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="manage.php">Manage</a></li>
-          </ul>
-      </nav>
+     <?php include "nav.inc";?>
     </div>
 
         <main>
@@ -56,13 +45,13 @@
             <h2>Member Contribution</h2>
               <dl>
                 <dt>Harry's Contribution:</dt>
-                <dd>About Page</dd>
+                <dd>Converting pages to php, include files, and About Page</dd>
                 <dt>Josh's Contribution:</dt>
-                <dd>Jobs Page and Navigation Bar</dd>
+                <dd>Jobs Page, Jobs Table in MySQL, and Navigation Bar</dd>
                 <dt>Diesel's Contribution:</dt>
-                <dd>Apply Page</dd>
+                <dd>Apply Page, EOI Table in MySQL, Process EOI in php</dd>
                 <dt>Jerry's Contribution:</dt>
-                <dd>Home Page and Footer</dd>
+                <dd>Home Page, Manage Page, and Footer</dd>
               </dl>
           </section>
 
@@ -123,54 +112,32 @@
             <br>
           </section>
 
+          <section id="grey_section">
+            <h2>Future Career Aspirations</h2>
+            <br>
+            <h3>Harry</h3>
+              <p>I'm currently studying a Bachelor of Computer Science and majoring in Software Development. I'm in my first year of the 3 or 4 year course, and during my studies I hope to get an internship working at a software company. After I graduate I hope to either get a full time job working at the place I interned at, or eventually working at a big tech company. I would also enjoy working at a company who combined sport and software, as a major interest in mine is Football (Soccer).</p>
+          </section> 
+
+          <section id="white_section">
+            <h3>Josh</h3>
+              <p></p>
+          </section>
+
+          <section id="grey_section">
+            <h3>Diesel</h3>
+              <p>After I finish my studies, I want to involve myself in multiple career opportunities. One of them being Cybersecurity (which I'm majoring in) for a big company either protecting their information directly, or developing/working on the software that will protect their information. Also, I want to develop websites for smaller businesses and maintain them indefinitely.</p>
+          </section>
+
+          <section id="white_section">
+            <h3>Jerry</h3>
+              <p></p>
+          </section>
+
+
 
         <!--Footer with Jira link-->
-        <div class="footer">
-          <!-- Jira link-->
-          <div class="logofooter">
-              <img src="images/image1.jpg" alt="HJDJ Logo">
-          </div>
-    
-          <div class="objfooter">
-              <h3>Contact</h3>
-              <div class="link">
-                  <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9">Jira Project</a>
-              </div>
-              <div class="email">
-                  <p>Email:</p>
-                  <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Tel: 408-486-1405</p>
-              </div>
-          </div>
-          
-          <div class="objfooter">
-              <h3>Company</h3>
-              <div class="link">
-                  <p>About us</p>
-              </div>
-              <div class="email">
-                  <p>Event</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Terms and conditions</p>
-              </div>
-          </div>
-
-          <div class="objfooter">
-              <h3>Follow Us</h3>
-              <div class="link">
-                  <p>Facebook</p>
-              </div>
-              <div class="email">
-                  <p>Instagram</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Twitter</p>
-              </div>
-          </div>
-      </div>
+      <?php include "footer.inc";?>
     </main>
 </body>
 

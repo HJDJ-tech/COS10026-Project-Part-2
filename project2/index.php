@@ -9,24 +9,11 @@
   </head>
   <body>
     <!-- div header -->
-    <div class="header">
-      <div class="logo-container">
-        <img src="images/image.png" alt="HJDJ Logo" />
-      </div>
+    <?php include "header.inc";?>
       <!-- Site navigation -->
-      <nav>
-        <ul class="menu">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="manage.php">Manage</a></li>
-        </ul>
-      </nav>
+      <?php include "nav.inc";?>
     </div>
-<?php
-session_start();
-?>
+
 
 
     <!-- Note: All image and text part for the homepage are AI generated (not the coding part) -->
@@ -36,7 +23,7 @@ session_start();
     <div class="banner">
       <div class="bannercontent">
         <div class="bannertext">Careers at HJDJ IT </div>
-        <form action="jobs.html">
+        <form action="jobs.php">
           <button type="submit" class="btn">Explore Careers</button>
         </form>
       </div>
@@ -54,6 +41,7 @@ session_start();
       </p>
     </div>
     </div>
+        <!-- Embedded YouTube video  -->
     <div class="youtube23">
     <iframe class="youtube" src="https://www.youtube.com/embed/91tdkSp6ahA?si=7hIDFtaFurbIjBH-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
@@ -102,11 +90,12 @@ session_start();
       <div class="Ready">
         <h2 style="color: aliceblue">Ready to join us?</h2>
       </div>
+          <!-- Navigation to apply and jobs buttons -->
       <div class="readybutton">
-        <form action="apply.html">
+        <form action="apply.php">
           <button type="submit" class="btn">Get Started</button>
         </form>
-        <form action="jobs.html">
+        <form action="jobs.php">
           <button type="submit" class="btn">Explore Careers</button>
         </form>
       </div>
@@ -122,57 +111,7 @@ session_start();
         </div>
       </div>
     </div>
-
-    <div class="footer">
-      <!-- Jira link-->
-      <div class="logofooter">
-        <img src="images/image1.jpg" alt="HJDJ Logo" />
-      </div>
-
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Contact</h3>
-        <div class="link">
-          <a
-            href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9"
-          >
-            Jira Project
-          </a>
-        </div>
-        <div class="email">
-          Email:
-          <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Tel: 408-486-1405</a>
-        </div>
-      </div>
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Company</h3>
-        <div class="link">
-          <a>
-            About us
-          </a>
-        </div>
-        <div class="email">
-          
-          <a>Event </a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Terms and conditions</a>
-        </div>
-      </div>
-      <div class="objfooter">
-        <h3 style="margin-bottom: 15px">Follow Us</h3>
-        <div class="link">
-          <a href="https://github.com/HJDJ-tech/COS10026-Project-Part-1" target="_blank">GitHub</a>
-        </div>
-        <div class="email">
-          <a>Instagram</a>
-        </div>
-        <div class="megaphonetelephone">
-          <a>Twitter</a>
-        </div>
-      </div>
-    </div>
+    <!-- Footer -->
+    <?php include "footer.inc";?>
   </body>
 </html>

@@ -1,104 +1,3 @@
-<?php
-    require_once "settings.php";
-    $db_connection = @mysqli_connect($host,$user,$pwd,$sql_db);
-    if ($db_connection) {
-        $query = "SELECT * FROM jobs";
-        $result = mysqli_query($db_connection, $query);
-        $gradient = "light_gradient";
-        if ($result) {
-            <div class='job_list'>;
-            while ($row = mysqli_fetch_assoc($result)) {
-                
-                // <section class='job_position grey_content_section $gradient' id=$row['job_id']>;
-                // <h2 class='job_title jobs_page_heading'>$row['title']</h2>;
-                // <section class='job_outline'>;
-                // <h3 class='jobs_page_heading'>About the Role</h3>;
-                // <p>$row['description']</p>;
-                // </section>;
-
-                // <section class='job_information'>;
-                // <section class='job_responsibilities'>;
-                // <h3 class='jobs_page_heading center_heading'>Responsibilities</h3>;
-                // <ol>;
-                // <li>Manage network-related projects, including design, planning, execution, and handover to Operations. </li>;
-                // <li>Manage project timelines, identify and resolve issues while ensuring minimal impact on BAU operations.</li>;
-                // <li>Adhere to network policies, procedures, and security best practices during project deployments.</li>;
-                // <li>Collaborate with stakeholders to analyse customer needs and translate them into effective network solutions.</li>;
-                // </ol>;
-                // </section>;
-
-                // <section class='required_quals'>;
-                // <h3 class='jobs_page_heading center_heading'>Qualifications and Skills</h3>;
-                // <h4 class='jobs_page_heading center_heading'>Required</h4>;
-                // <ul>;
-                // <li>Bachelor’s degree in a related field.</li>;
-                // <li>2+ years of data analysis experience.</li>;
-                // <li>Strong skills in SQL.</li>;
-                // <li>Experience with Excel and spreadsheets.</li>;
-                // <li>Good problem-solving skills.</li>;
-                // <li>Clear communication skills.</li>;
-                // <li>Ability to work with large datasets.</li>;
-                // </ul>;
-                // </section>;
-
-                // <section class='preferred_quals'>;
-                // <h4 class='jobs_page_heading center_heading'>Preferred:</h4>;
-                // <ul>;
-                // <li>Experience with Tableau or Power BI.</li>;
-                // <li>Basic knowledge of Python or R.</li>;
-                // <li>Familiarity with cloud data tools.</li>;
-                // <li>Understanding of data privacy rules.</li>;
-                // <li>Experience working in teams.</li>;
-                // <li>Interest in learning new tools.</li>;
-                // </ul>;
-                // </section>;
-                
-                // <section class='job_salary'>;
-                // <h3 class='jobs_page_heading center_heading'>Salary and Benefits</h3>;
-                // <ul>;
-                // <li>Salary Range: $90,000 - $105,000.</li>;
-                // <li>6 weeks of paid time off.</li>;
-                // <li>Super: 13.75%.</li>;
-                // <li>Flexible work arrangements.</li>;
-                // <li>Remote work options.</li>;
-                // <li>Comprehensive health cover.</li>;
-                // <li>Paid training and upskilling.</li>;
-                // <li>Wellness and fitness programs.</li>;
-                // <li>Modern tools and software.</li>;
-                // </ul>;
-                // </section>;
-
-                // <h4 class='team_lead jobs_page_heading'>Reports to: Director of Technology</h4>;
-                // </section>;
-
-                // <form action='apply.html'>;
-                // <button class='btn'>Apply Now</button>;
-                // </form>;
-                // <p>Ref #: DA301</p>;
-                // </section>;
-                
-            
-
-                if ($gradient == "light_gradient") {
-                    $gradient = "dark_gradient";
-                }
-                else {
-                    $gradient = "light_gradient";
-                }
-            }
-            </div>;
-        }
-        else {
-            echo "<p>Could not retrieve data. Please refresh and try again</p>";
-        }
-        mysqli_close($db_connection);
-    }
-    else {
-        echo "<p>Unable to connect to the database. Please check connection</p>";
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -111,29 +10,12 @@
 
     <body>
     <!-- div header -->
-    <div class="header jobs_page_nav">
-        <div class="logo-container">
-            <img src="images/image.png" alt="HJDJ Logo">
-        </div>
+    <?php include "header.inc";?>
         <!-- Site navigation -->
-        <nav>
-            <ul class="menu">
-              <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="manage.php">Manage</a></li>
-            </ul>
-        </nav>
+     <?php include "nav.inc";?>
     </div>
         
         <main>
-            <?php if ($result): ?>
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
-
-
-
-
             <!-- Reasons to work for HJDJ -->
             <div class="jobs_page_header">
                 <h1 id="jobs_page_main_heading" class="white_text">HJDJ Careers</h1>
@@ -595,52 +477,7 @@
             </div>
 
             <!-- This is The Footer -->
-            <div class="footer" id="jobs_page_footer">
-                <!-- Jira link-->
-                <div class="logofooter">
-                    <img src="images/image1.jpg" alt="HJDJ Logo">
-                </div>
-          
-                <div class="objfooter">
-                    <h3 class="jobs_page_heading">Contact</h3>
-                    <div class="link">
-                        <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9">Jira Project</a>
-                    </div>
-                    <div class="email">
-                        <p>Email:</p>
-                        <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-                    </div>
-                    <div class="megaphonetelephone">
-                        <p>Tel: 408-486-1405</p>
-                    </div>
-                </div>
-                
-                <div class="objfooter">
-                    <h3 class="jobs_page_heading">Company</h3>
-                    <div class="link">
-                        <p>About us</p>
-                    </div>
-                    <div class="email">
-                        <p>Event</p>
-                    </div>
-                    <div class="megaphonetelephone">
-                        <p>Terms and conditions</p>
-                    </div>
-                </div>
-
-                <div class="objfooter">
-                    <h3 class="jobs_page_heading">Follow Us</h3>
-                    <div class="link">
-                        <p>Facebook</p>
-                    </div>
-                    <div class="email">
-                        <p>Instagram</p>
-                    </div>
-                    <div class="megaphonetelephone">
-                        <p>Twitter</p>
-                    </div>
-                </div>
-            </div>
+            <?php include "footer.inc";?>
             <!-- End Of Footer -->
         </main>
     </body>
