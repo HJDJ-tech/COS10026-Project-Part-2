@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
     <title>HJDJ IT</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/loginstyle.css">
+    <link rel="stylesheet" href="styles/styles.css?v2">
     <link rel="icon" type="image/png" href="images/logoweb.png">
   </head>
   <body>
@@ -23,13 +22,19 @@ session_start();
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "test_db";
+$dbname = "project_2";
 $error = "";
 
-$conn = new mysqli($host, $user, $pass, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+
+if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) { // checks to see if the user is currently banned, and looks to see if the time is less than the banned login time w3schools.com/php/func_date_time.asp
+  $remaining = $_SESSION["banned_login"] - time();
+  $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
+} else {
+    $conn = new mysqli($host, $user, $pass, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -44,15 +49,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows === 1) {
             $_SESSION['email'] = $email;
+            $_SESSION["attempts"] = 0;
             header("Location: manage1.php");
             exit;
         } else {
-            $error = "Invalid login credentials.";
+          $_SESSION["attempts"] = ($_SESSION["attempts"] ?? 0) + 1; // checks to see if the user has had any attempts first, and if they haven't had any, assign 0 and then count 1. w3schools.com/php/php_operators.asp
+          if ($_SESSION["attempts"] >= 3) { // checks to see if attempts is greater than or equal to 3
+            $_SESSION["banned_login"] = time() + 120; // if it is, it bans the user for 120 seconds
+            $error = "You have been timed out for too many failed logins. You are timed out for 2 minutes.";
+          } else {
+            $remaining = 3 - $_SESSION["attempts"];
+            $error = "Invalid login credentials. You will be timed out for 2 minutes in $remaining attempts";
+          }
             $inputError = "input-error";
         }
       }
     }
-
+  }
 ?>
 <div class="login-page">
   <div class="login">

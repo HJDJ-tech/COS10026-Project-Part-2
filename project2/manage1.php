@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
     <title>HJDJ IT</title>
-    <link rel="stylesheet" href="styles/styles.css">
-     <link rel="stylesheet" href="styles/loginstyle.css">
+    <link rel="stylesheet" href="styles/styles.css?v2">
     <link rel="icon" type="image/png" href="images/logoweb.png">
     <style>
       select[name^="status"] {
@@ -19,22 +18,14 @@
     <?php include "header.inc";?>
       <nav>
         <ul class="menu">
-            <li>MANAGER SITE</li>
+            <li>Manager Site</li>
             <li><a href="index.php">Logout</a></li>
         </ul>
       </nav>
     </div>
     <div class="table-container">
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'project_2';
-
-$conn = new mysqli($host, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once("settings.php"); //Database connection
 
 $conn->query("UPDATE eoi SET Status = 'New' WHERE Status IS NULL OR Status = ''");
 
