@@ -34,9 +34,9 @@ echo       '<div class="footer" id="jobs_page_footer">
 
                 <div class="objfooter">
                     <h3 class="jobs_page_heading">Follow Us</h3>
-                    <div class="link">
-                        <p>Facebook</p>
-                    </div>
+                <div class="link">
+                    <a href="https://github.com/HJDJ-tech/COS10026-Project-Part-2" target="_blank">GitHub</a>
+                </div>
                     <div class="email">
                         <p>Instagram</p>
                     </div>
