@@ -24,12 +24,18 @@ require_once("settings.php");
 $error = "";
 $inputError = "";
 
-
+if (!isset($_SESSION["attempts"])) { // set attempts to 0 on first visit to manage.php
+  $_SESSION["attempts"] = 0;
+}
 if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) { // checks to see if the user is currently banned, and looks to see if the time is less than the banned login time w3schools.com/php/func_date_time.asp
   $remaining = $_SESSION["banned_login"] - time();
   $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
 } 
-elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+elseif (isset($_SESSION["banned_login"]) && time() >= $_SESSION["banned_login"]) { 
+  unset($_SESSION["banned_login"]); // resets the banned login and sets attempts to 0 after the ban expires
+  $_SESSION["attempts"] = 0;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -58,7 +64,6 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       }
     }
-  }
 ?>
 <div class="login-page">
   <div class="login">
