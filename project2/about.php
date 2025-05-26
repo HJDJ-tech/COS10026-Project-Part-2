@@ -45,13 +45,13 @@
             <h2>Member Contribution</h2>
               <dl>
                 <dt>Harry's Contribution:</dt>
-                <dd>About Page</dd>
+                <dd>Converting pages to php, include files, and About Page</dd>
                 <dt>Josh's Contribution:</dt>
-                <dd>Jobs Page and Navigation Bar</dd>
+                <dd>Jobs Page, Jobs Table in MySQL, and Navigation Bar</dd>
                 <dt>Diesel's Contribution:</dt>
-                <dd>Apply Page</dd>
+                <dd>Apply Page, EOI Table in MySQL, Process EOI in php</dd>
                 <dt>Jerry's Contribution:</dt>
-                <dd>Home Page and Footer</dd>
+                <dd>Home Page, Manage Page, and Footer</dd>
               </dl>
           </section>
 
@@ -111,6 +111,13 @@
             </table>
             <br>
           </section>
+
+          <section id="grey_section">
+            <h2>Future Career Aspirations</h2>
+            <h3>Harry</h3>
+              <p>I'm currently studying a Bachelor of Computer Science and majoring in Software Development. I'm in my first year of the 3 or 4 year course, and during my studies I hope to get an internship working at a software company. After I graduate I hope to either get a full time job working at the place I interned at, or eventually working at a big tech company. I would also enjoy working at a company who combined sport and software, as a major interest in mine is Football (Soccer).</p>
+          </section> 
+
 
 
         <!--Footer with Jira link-->
