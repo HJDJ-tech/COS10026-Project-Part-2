@@ -59,19 +59,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             $error = "Invalid login credentials.";
+            $inputError = "input-error";
         }
-    } else {
-        $error = "SQL error: " . $conn->error;
-        
+      }
     }
-}   
+
 ?>
 <div class="login-page">
   <div class="login">
     <p>Manager Login</p>
     <form method="post" action="manage.php">
       Manager Email: <input type="text" name="email" required><br>
-      Password: <input type="password" name="password" required><br>
+      Password: <input type="password" name="password" class="<?php echo $inputError; ?>" required><br>
+      <?php if (!empty($error)) echo "<p style='color: red; text-align: center; font-size: 14px;'>$error</p>"; ?>
       <input type="submit" value="Login">
     </form>
   </div>
