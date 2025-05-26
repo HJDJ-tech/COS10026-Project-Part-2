@@ -569,35 +569,35 @@ dd {
 }
 
 /* Adding images to the background of each job position */
-#data_analyst {
+#DA301 {
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/data-analyst.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-#software_engineer {
+#SE401 {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/software_engineer.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
 }
 
-#ux_designer {
+#UX204 {
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/ux_designer.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
 }
 
-#it_support {
+#IT102 {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/it_support.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
 }
 
-#cybersecurity_analyst {
+#CS507 {
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("images/cybersecurity.png");
     background-size: cover;
     background-position: center;
