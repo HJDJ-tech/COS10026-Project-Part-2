@@ -23,7 +23,7 @@ session_start();
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "test_db";
+$dbname = "password";
 $error = "";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
