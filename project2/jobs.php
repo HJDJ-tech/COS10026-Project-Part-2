@@ -116,7 +116,7 @@
                     </section>
                     
                     <!-- Button linked to apply.html page -->
-                    <form action="apply.html">
+                    <form action="apply.php">
                         <button class="btn">Apply Now</button>
                     </form>
                     <p>Ref #: DA301</p>
@@ -200,7 +200,7 @@
                     </section>
 
                     <!-- Button linked to apply.html page -->
-                    <form action="apply.html">
+                    <form action="apply.php">
                         <button class="btn">Apply Now</button>
                     </form>                    
                     <!-- Job position reference number -->
@@ -290,7 +290,7 @@
                     </section>
                     
                     <!-- Button linked to apply.html page -->
-                    <form action="apply.html">
+                    <form action="apply.php">
                         <button class="btn">Apply Now</button>
                     </form>
                     <p>Ref #: UX204</p>
@@ -379,7 +379,7 @@
                     </section>
                     
                     <!-- Button linked to apply.html page -->
-                    <form action="apply.html">
+                    <form action="apply.php">
                         <button class="btn">Apply Now</button>
                     </form>
                     <p class="white_text">Ref #: IT102</p>
@@ -468,7 +468,7 @@
                     </section>
                     
                     <!-- Button linked to apply.html page -->
-                    <form action="apply.html">
+                    <form action="apply.php">
                         <button class="btn">Apply Now</button>
                     </form>
                     <p>Ref #: CS507</p>
