@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
-        <title>HJDJ IT</title>
+        <meta name="keywords" content="HJDJ IT, About Us, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
+        <title>HJDJ IT About Us</title>
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="icon" type="image/png" href="images/logoweb.png">
     </head>
@@ -112,30 +112,24 @@
             <br>
           </section>
 
+
           <section id="grey_section">
             <h2>Future Career Aspirations</h2>
             <br>
             <h3>Harry</h3>
               <p>I'm currently studying a Bachelor of Computer Science and majoring in Software Development. I'm in my first year of the 3 or 4 year course, and during my studies I hope to get an internship working at a software company. After I graduate I hope to either get a full time job working at the place I interned at, or eventually working at a big tech company. I would also enjoy working at a company who combined sport and software, as a major interest in mine is Football (Soccer).</p>
-          </section> 
-
-          <section id="white_section">
-            <h3>Josh</h3>
-              <p></p>
-          </section>
-
-          <section id="grey_section">
-            <h3>Diesel</h3>
+            <br>
+              <h3>Josh</h3>
+            <!-- AI Generated text from Josh -->
+              <p>Once I finish my studies, I plan to refine my game development skills and create engaging, immersive experiences. I'm keen to specialise in areas like AI or game mechanics, and contribute to innovative projects at large companies like Naughty Dog or CD Projekt Red. My goal is to stay adaptable and keep up with emerging trends as the industry evolves.</p>
+            <br>
+              <h3>Diesel</h3>
               <p>After I finish my studies, I want to involve myself in multiple career opportunities. One of them being Cybersecurity (which I'm majoring in) for a big company either protecting their information directly, or developing/working on the software that will protect their information. Also, I want to develop websites for smaller businesses and maintain them indefinitely.</p>
-          </section>
-
-          <section id="white_section">
-            <h3>Jerry</h3>
-              <p></p>
-          </section>
-
-
-
+            <br>
+              <h3>Jerry</h3>
+            <!-- AI Generated text from Jerry -->
+              <p>After completing my studies, I aspire to pursue a career in the tech industry where I can contribute to innovative projects that solve real-world problems. I'm particularly interested in roles that combine creativity with technical skills, such as software development, UI/UX design, or data analytics. Ultimately, I hope to be part of a team that builds meaningful digital solutions and continuously pushes the boundaries of what's possible.</p>
+            </section> 
         <!--Footer with Jira link-->
       <?php include "footer.inc";?>
     </main>
