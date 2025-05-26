@@ -16,10 +16,7 @@
     </style>
   </head>
   <body>
-    <div class="header">
-      <div class="logo-container">
-        <img src="images/image.png" alt="HJDJ Logo" />
-      </div>
+    <?php include "header.inc";?>
       <nav>
         <ul class="menu">
             <li>MANAGER SITE</li>
@@ -143,34 +140,6 @@ if ($result && $result instanceof mysqli_result) {
 $conn->close();
 ?>
 </div>
-<div class="footer">
-  <div class="logofooter">
-    <img src="images/image1.jpg" alt="HJDJ Logo" />
-  </div>
-  <div class="objfooter">
-    <h3 style="margin-bottom: 15px">Contact</h3>
-    <div class="link">
-      <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira Project</a>
-    </div>
-    <div class="email">
-      Email: <a href="mailto:HJDJcarrier@hjdj.com.au">HJDJcarrier@hjdj.com.au</a>
-    </div>
-    <div class="megaphonetelephone">
-      <a>Tel: 408-486-1405</a>
-    </div>
-  </div>
-  <div class="objfooter">
-    <h3 style="margin-bottom: 15px">Company</h3>
-    <div class="link"><a>About us</a></div>
-    <div class="email"><a>Event</a></div>
-    <div class="megaphonetelephone"><a>Terms and conditions</a></div>
-  </div>
-  <div class="objfooter">
-    <h3 style="margin-bottom: 15px">Follow Us</h3>
-    <div class="link"><a href="https://github.com/HJDJ-tech/COS10026-Project-Part-1" target="_blank">GitHub</a></div>
-    <div class="email"><a>Instagram</a></div>
-    <div class="megaphonetelephone"><a>Twitter</a></div>
-  </div>
-</div>
+     <?php include "footer.inc";?>
 </body>
 </html> 
