@@ -137,7 +137,7 @@
                     <h4 class="team_lead jobs_page_heading">Reports to: <?= $row['reports_to'] ?></h4>
                 </section>
 
-                <form action="apply.html">
+                <form action="apply.php">
                     <button class="btn">Apply Now</button>
                 </form>
                 <p>Ref #: <?= $row['job_id'] ?></p>
