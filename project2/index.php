@@ -24,9 +24,7 @@
         </ul>
       </nav>
     </div>
-<?php
-session_start();
-?>
+
 
 
     <!-- Note: All image and text part for the homepage are AI generated (not the coding part) -->

@@ -6,6 +6,7 @@
     <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
     <title>HJDJ IT</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/loginstyle.css">
     <link rel="icon" type="image/png" href="images/logoweb.png">
   </head>
   <body>
@@ -61,20 +62,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         $error = "SQL error: " . $conn->error;
+        
     }
-}
-     
+}   
 ?>
-<div class= login>
-<p>Manager Login</p>
-<form method="post" action="manage.php">
-    Manager Email: <input type="text" name="email" required><br>
-       
-    Password: <input type="password" name="password" required><br>
-    <input type="submit" value="Login">
-</form>
+<div class="login-page">
+  <div class="login">
+    <p>Manager Login</p>
+    <form method="post" action="manage.php">
+      Manager Email: <input type="text" name="email" required><br>
+      Password: <input type="password" name="password" required><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
 </div>
-
      <div class="footer">
       <!-- Jira link-->
       <div class="logofooter">
@@ -125,4 +126,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
     </div>
-  
+  </body>
+</html>
