@@ -10,20 +10,9 @@
     
     <body>
     <!-- div header -->
-    <div class="header">
-      <div class="logo-container">
-          <img src="images/image.png" alt="HJDJ Logo">
-      </div>
+    <?php include "header.inc";?>
       <!-- Site navigation -->
-      <nav>
-          <ul class="menu">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="jobs.php">Jobs</a></li>
-          <li><a href="apply.php">Apply</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="manage.php">Manage</a></li>
-          </ul>
-      </nav>
+     <?php include "nav.inc";?>
     </div>
 
         <main>
@@ -125,52 +114,7 @@
 
 
         <!--Footer with Jira link-->
-        <div class="footer">
-          <!-- Jira link-->
-          <div class="logofooter">
-              <img src="images/image1.jpg" alt="HJDJ Logo">
-          </div>
-    
-          <div class="objfooter">
-              <h3>Contact</h3>
-              <div class="link">
-                  <a href="https://hjdj2025swin.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNTNmYmIyMzMyZDlhNGJhNzllODI0YTMyNmJkMWEzNDEiLCJwIjoiaiJ9">Jira Project</a>
-              </div>
-              <div class="email">
-                  <p>Email:</p>
-                  <a href="mailto:someone@example.com">HJDJcarrier@hjdj.com.au</a>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Tel: 408-486-1405</p>
-              </div>
-          </div>
-          
-          <div class="objfooter">
-              <h3>Company</h3>
-              <div class="link">
-                  <p>About us</p>
-              </div>
-              <div class="email">
-                  <p>Event</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Terms and conditions</p>
-              </div>
-          </div>
-
-          <div class="objfooter">
-              <h3>Follow Us</h3>
-              <div class="link">
-                  <p>Facebook</p>
-              </div>
-              <div class="email">
-                  <p>Instagram</p>
-              </div>
-              <div class="megaphonetelephone">
-                  <p>Twitter</p>
-              </div>
-          </div>
-      </div>
+      <?php include "footer.inc";?>
     </main>
 </body>
 
