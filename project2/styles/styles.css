@@ -1022,3 +1022,9 @@ table tr:hover td {
         border-radius: 5px;
         text-align: center;
       }
+
+/* Enhancement Page Styling */
+#enhancement_section {
+    background-color: #1e1e1e;
+    padding: 2em;
+}
