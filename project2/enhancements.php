@@ -35,7 +35,11 @@
                 <br>
                 <h3>Control access to manage.php by checking username and password.</h3>
                 <br>
-                <p>This enhancement was created and implemented by Jerry when creating manage.php. The code for checking email (username), and password can be found inside of manage.php</p>
+                <p>This enhancement was created and implemented by Jerry when creating manage.php. The code for checking email (username), and password can be found inside of manage.php.</p>
+                <br>
+                <h3>Have access to the web site disabled for the user for a peroid of time on, say, three or more invalid login attempts.</h3>
+                <br>
+                <p>This enhancement was created and implemented by Harry inside of manage.php, using references from W3Schools, as well as Lab work for sessions, operators and logic etc. The code for that can be found inside of manage.php.</p>
             </section>
 
 
