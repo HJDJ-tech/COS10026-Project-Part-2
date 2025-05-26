@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2025 at 08:08 AM
+-- Generation Time: May 26, 2025 at 01:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -52,14 +52,14 @@ CREATE TABLE `eoi` (
 
 INSERT INTO `eoi` (`EOInumber`, `JobReferenceNumber`, `FirstName`, `LastName`, `Gender`, `DOB`, `StreetAddress`, `SuburbTown`, `State`, `Postcode`, `Email`, `PhoneNumber`, `Availability`, `WorkRights`, `OtherSkills`, `Status`) VALUES
 (1, 'DA301', 'Diesel', 'Williams', 'Male', '2025-04-29', 'My street', 'My Suburb', 'VIC', '3142', 'dieselwilliams06@gmail.com', '0436483403', 'Part-time', 'Citizen', 'code. code. code.', 'New'),
-(2, 'UX204', 'Misty', 'Larsen', 'Male', '2001-09-08', '1577 Miller Points Apt. 245', 'Rosebery', 'NT', '0832', 'wilcoxbrian@gmail.com', '0468462737', 'Part-time', 'Temporary Visa', 'Python programming', 'Current'),
+(2, 'UX204', 'Misty', 'Larsen', 'Male', '2001-09-08', '1577 Miller Points Apt. 245', 'Rosebery', 'NT', '0832', 'wilcoxbrian@gmail.com', '0468462737', 'Part-time', 'Temporary Visa', 'Python programming', 'New'),
 (3, 'CS507', 'Wesley', 'Taylor', 'Female', '1985-02-01', '6851 Pearson Isle', 'Bakewell', 'NT', '0832', 'bryanenglish@gmail.com', '0438737089', 'Casual', 'Temporary Visa', 'Web development', 'New'),
 (4, 'CS507', 'Connie', 'Greene', 'Female', '2004-11-11', '447 Leon Port', 'Kingston', 'ACT', '7050', 'alex48@gmail.com', '0437534576', 'Part-time', 'Temporary Visa', 'Data analysis', 'New'),
 (5, 'CS507', 'Natasha', 'Lopez', 'Male', '1976-04-22', '80821 Anthony Creek Suite 187', 'Rosebery', 'NT', '0832', 'paulkaiser@gmail.com', '0413067080', 'Casual', 'Citizen', 'Customer service', 'New'),
 (6, 'IT102', 'Andrea', 'Durham', 'Female', '1989-11-02', '026 Clark Lock Apt. 403', 'Blackmans Bay', 'TAS', '7052', 'dominiquedavis@gmail.com', '0443756362', 'Part-time', 'Citizen', 'Project management', 'New'),
 (7, 'IT102', 'Cindy', 'Johnson', 'Female', '1980-10-10', '7636 Mckenzie Ford', 'Penrith', 'NSW', '2750', 'zhernandez@gmail.com', '0460419858', 'Full-time', 'Permanent Resident', 'Graphic design', 'New'),
 (8, 'DA301', 'Stacy', 'Parker', 'Male', '2000-09-01', '87263 Cameron Drive', 'Blackmans Bay', 'TAS', '7052', 'emeza@gmail.com', '0446606801', 'Casual', 'Citizen', 'Database management', 'New'),
-(9, 'UX204', 'Joshua', 'Berry', 'Female', '1994-01-01', '93327 Peter Underpass', 'Rosebery', 'NT', '0832', 'austin72@gmail.com', '0426695376', 'Full-time', 'Temporary Visa', 'Technical writing', 'Current'),
+(9, 'UX204', 'Joshua', 'Berry', 'Female', '1994-01-01', '93327 Peter Underpass', 'Rosebery', 'NT', '0832', 'austin72@gmail.com', '0426695376', 'Full-time', 'Temporary Visa', 'Technical writing', 'New'),
 (10, 'IT102', 'Daniel', 'Larson', 'Female', '1982-05-30', '307 Wiggins Tunnel', 'Joondalup', 'WA', '6027', 'staceywhitehead@gmail.com', '0457609452', 'Part-time', 'Temporary Visa', 'Cybersecurity', 'New'),
 (11, 'DA301', 'James', 'Estrada', 'Male', '1967-07-02', '1389 Daniel Well Apt. 370', 'New Norfolk', 'TAS', '7140', 'zprice@gmail.com', '0446896826', 'Part-time', 'Temporary Visa', 'Machine learning', 'New'),
 (12, 'SE401', 'Noah', 'Rice', 'Male', '1996-07-31', '60960 Pineda Creek', 'St Kilda', 'VIC', '3182', 'stephanie65@gmail.com', '0489052211', 'Casual', 'Permanent Resident', 'Cloud computing', 'New'),
@@ -151,7 +151,27 @@ INSERT INTO `eoi` (`EOInumber`, `JobReferenceNumber`, `FirstName`, `LastName`, `
 (98, 'CS507', 'Mark', 'Bailey', 'Male', '1970-06-03', '95813 Mann Mountains', 'Penrith', 'NSW', '2750', 'ian43@gmail.com', '0463413715', 'Part-time', 'Temporary Visa', 'Digital illustration', 'New'),
 (99, 'UX204', 'David', 'Baker', 'Male', '1974-08-12', '4186 Hill Mission Apt. 805', 'Joondalup', 'WA', '6027', 'danrodriguez@gmail.com', '0420766657', 'Part-time', 'Citizen', 'Business analysis', 'New'),
 (100, 'DA301', 'Ruth', 'Jackson', 'Male', '1998-05-17', '133 Boyd Isle Suite 676', 'Blacktown', 'NSW', '2148', 'michaelagaines@gmail.com', '0434906049', 'Part-time', 'Citizen', 'Search engine optimization', 'New'),
-(101, 'SE401', 'Kathryn', 'Williams', 'Female', '1995-10-23', '299 Fernandez Unions', 'Carlton', 'VIC', '3053', 'anthonystevens@gmail.com', '0479825245', 'Full-time', 'Citizen', 'Help desk support', 'New');
+(101, 'SE401', 'Kathryn', 'Williams', 'Female', '1995-10-23', '299 Fernandez Unions', 'Carlton', 'VIC', '3053', 'anthonystevens@gmail.com', '0479825245', 'Full-time', 'Citizen', 'Help desk support', 'New'),
+(102, 'IT102', 'Cuong', 'Nguyen', 'Male', '2003-01-22', 'My Street', 'Elwood', 'VIC', '3184', 'jerrynguyenau@gmail.com', '0436483403', 'Full-time', 'Temporary Visa', 'C++', 'New');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`) VALUES
+(1, 'manager@gmail.com', '12345678');
 
 --
 -- Indexes for dumped tables
@@ -164,6 +184,12 @@ ALTER TABLE `eoi`
   ADD PRIMARY KEY (`EOInumber`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -171,7 +197,13 @@ ALTER TABLE `eoi`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

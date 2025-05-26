@@ -22,7 +22,7 @@ session_start();
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "password";
+$dbname = "project_2";
 $error = "";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
