@@ -22,6 +22,8 @@ require_once("settings.php");
 
 $error = "";
 $inputError = "";
+$remaining = 0;
+$banned = false;
 
 if (!isset($_SESSION["attempts"])) { // set attempts to 0 on first visit to manage.php
   $_SESSION["attempts"] = 0;
@@ -29,12 +31,14 @@ if (!isset($_SESSION["attempts"])) { // set attempts to 0 on first visit to mana
 if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) { // checks to see if the user is currently banned, and looks to see if the time is less than the banned login time w3schools.com/php/func_date_time.asp
   $remaining = $_SESSION["banned_login"] - time();
   $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
+  $inputError = "input-error";
+  $banned = true; // sets banned to true
 } 
 elseif (isset($_SESSION["banned_login"]) && time() >= $_SESSION["banned_login"]) { 
   unset($_SESSION["banned_login"]); // resets the banned login and sets attempts to 0 after the ban expires
   $_SESSION["attempts"] = 0;
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !$banned) { // continues if banned is not true
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -55,9 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if ($_SESSION["attempts"] >= 3) { // checks to see if attempts is greater than or equal to 3
             $_SESSION["banned_login"] = time() + 120; // if it is, it bans the user for 120 seconds
             $error = "You have been timed out for too many failed logins. You are timed out for 2 minutes.";
+            $banned = true;
+            $remaining = 120;
           } else {
-            $remaining = 3 - $_SESSION["attempts"];
-            $error = "Invalid login credentials. You will be timed out for 2 minutes in $remaining attempts";
+            $remaining_attempts = 3 - $_SESSION["attempts"];
+            $error = "Invalid login credentials. You will be timed out for 2 minutes in $remaining_attempts attempts";
           }
             $inputError = "input-error";
         }
@@ -71,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       Manager Email: <input type="text" name="email" required><br>
       Password: <input type="password" name="password" class="<?php echo $inputError; ?>" required><br>
       <?php if (!empty($error)) echo "<p style='color: red; text-align: center; font-size: 14px;'>$error</p>"; ?>
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" <?php echo $banned ? "disabled" : ""; ?>> 
     </form>
   </div>
 </div>
