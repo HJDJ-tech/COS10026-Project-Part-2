@@ -319,7 +319,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'manager@gmail.com', '12345678');
+(1, 'manager@gmail.com', '$2y$10$JBvE2EO/EeeIiTzOB18Z4ORFntFZOYpSsclnA0r6Ik44n5Y7KGf9K');
 
 --
 -- Indexes for dumped tables
