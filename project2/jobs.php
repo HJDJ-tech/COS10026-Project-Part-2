@@ -41,32 +41,42 @@
                 </div>
             </div>
 
-           <?php if (mysqli_num_rows($result_jobs) > 0): ?>
-        <div id="job_list">
+            <?php if (mysqli_num_rows($result_jobs) > 0): ?>
+                <?php $index = 0; ?>
+                <div id="job_list">
             <?php while ($row = mysqli_fetch_assoc($result_jobs)): ?>
-            <section class="job_position grey_content_section" id="<?= $row['job_id'] ?>">
-                <h2 class='job_title jobs_page_heading'><?= $row['title'] ?></h2>
-
+                <?php 
+                    $index += 1;
+                    if ($index % 2 == 0) {
+                        $text_colour = "white_text";
+                        $background_colour = "dark_gradient";
+                    } else {
+                        $text_colour = "";
+                        $background_colour = "light_gradient grey_content_section";
+                    }
+                ?>
+                <section class="job_position <?= $background_colour ?>" id="<?= $row['job_id'] ?>">
+                <h2 class="job_title jobs_page_heading <?= $text_colour ?>"><?= $row['title'] ?></h2>
                     <section class="job_outline">
-                        <h3 class="jobs_page_heading">About the Role</h3>
-                        <p><?= $row["description"] ?></p>
+                        <h3 class="jobs_page_heading <?= $text_colour ?>">About the Role</h3>
+                        <p class="<?= $text_colour ?>"><?= $row["description"] ?></p>
                     </section>
 
                 <section class="job_information">
                     <section class="job_responsibilities">
-                        <h3 class="jobs_page_heading center_heading">Responsibilities</h3>
+                        <h3 class="jobs_page_heading center_heading <?= $text_colour ?>">Responsibilities</h3>
 
                         <?php
                             $sql = sprintf("SELECT * FROM responsibilities WHERE job_id = '%s'", $row["job_id"]);
                             $result_responsibilities = mysqli_query($conn, $sql);
                         ?>
 
-                        <ol>
+                        <ol class="<?= $text_colour ?>">
                             <?php 
                                 while ($item = mysqli_fetch_assoc($result_responsibilities)) {
                                     foreach ($item as $column_name => $value) {
                                         if (strpos($column_name, 'bp') === 0 && !empty($value)){
-                                            echo "<li>$value</li>";
+                                            echo "<li class='$text_colour'>$value</li>";
                                         }
                                     }
                                 }
@@ -75,8 +85,8 @@
                     </section>   
 
                     <section class="required_quals">
-                        <h3 class="jobs_page_heading center_heading">Qualifications and Skills</h3>
-                        <h4 class="jobs_page_heading center_heading">Required:</h4>
+                        <h3 class="jobs_page_heading center_heading <?= $text_colour ?>">Qualifications and Skills</h3>
+                        <h4 class="jobs_page_heading center_heading <?= $text_colour ?>">Required:</h4>
 
                         <?php
                             $sql = sprintf("SELECT * FROM required_skills WHERE job_id = '%s'", $row["job_id"]);
@@ -88,7 +98,7 @@
                                 while ($item = mysqli_fetch_assoc($result_required)) {
                                     foreach ($item as $column_name => $value) {
                                         if (strpos($column_name, 'bp') === 0 && !empty($value)){
-                                            echo "<li>$value</li>";
+                                            echo "<li class='$text_colour'>$value</li>";
                                         }
                                     }
                                 }
@@ -97,7 +107,7 @@
                     </section>
 
                     <section class="preferred_quals">
-                        <h4 class="jobs_page_heading center_heading">Preferred:</h4>
+                        <h4 class="jobs_page_heading center_heading <?= $text_colour ?>">Preferred:</h4>
                         <?php
                             $sql = sprintf("SELECT * FROM preferred_skills WHERE job_id = '%s'", $row["job_id"]);
                             $result_preferred = mysqli_query($conn, $sql);
@@ -107,7 +117,7 @@
                                 while ($item = mysqli_fetch_assoc($result_preferred)) {
                                     foreach ($item as $column_name => $value) {
                                         if (strpos($column_name, 'bp') === 0 && !empty($value)){
-                                            echo "<li>$value</li>";
+                                            echo "<li class='$text_colour'>$value</li>";
                                         }
                                     }
                                 }
@@ -116,7 +126,7 @@
                     </section>
 
                     <section class="job_salary">
-                        <h3 class="jobs_page_heading center_heading">Salary and Benefits</h3>
+                        <h3 class="jobs_page_heading center_heading <?= $text_colour ?>">Salary and Benefits</h3>
                         <?php
                             $sql = sprintf("SELECT * FROM salary_and_benefits WHERE job_id = '%s'", $row["job_id"]);
                             $result_salary = mysqli_query($conn, $sql);
@@ -126,7 +136,7 @@
                                 while ($item = mysqli_fetch_assoc($result_salary)) {
                                     foreach ($item as $column_name => $value) {
                                         if (strpos($column_name, 'bp') === 0 && !empty($value)){
-                                            echo "<li>$value</li>";
+                                            echo "<li class='$text_colour'>$value</li>";
                                         }
                                     }
                                 }
@@ -134,13 +144,13 @@
                         </ul>
                     </section>
 
-                    <h4 class="team_lead jobs_page_heading">Reports to: <?= $row['reports_to'] ?></h4>
+                    <h4 class="team_lead jobs_page_heading <?= $text_colour ?>">Reports to: <?= $row['reports_to'] ?></h4>
                 </section>
 
                 <form action="apply.php">
                     <button class="btn">Apply Now</button>
                 </form>
-                <p>Ref #: <?= $row['job_id'] ?></p>
+                <p class="<?= $text_colour ?>">Ref #: <?= $row['job_id'] ?></p>
                 </section>
             <?php endwhile; ?>
             
