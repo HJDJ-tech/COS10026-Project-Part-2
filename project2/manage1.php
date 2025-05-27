@@ -24,6 +24,7 @@
       </nav>
     </div>
     <div class="table-container">
+      
 <?php
 require_once("settings.php"); //Database connection
 
@@ -47,12 +48,12 @@ if ($action == 'list_all') {
 } elseif ($action == 'delete_by_jobref' && !empty($_POST['job_ref'])) {
     $job_ref = $conn->real_escape_string($_POST['job_ref']);
     $conn->query("DELETE FROM eoi WHERE JobReferenceNumber = '$job_ref'");
-    echo "<p>All EOIs for job reference $job_ref have been deleted.</p>";
+    echo "<div class='success-message'>All EOIs for job reference $job_ref have been deleted.</div>";
 } elseif ($action == 'update_status' && isset($_POST['status']) && isset($_POST['eoi_number'])) {
     $eoi_number = intval($_POST['eoi_number']);
     $newStatus = $conn->real_escape_string($_POST['status']);
     $conn->query("UPDATE eoi SET Status = '$newStatus' WHERE EOInumber = $eoi_number");
-    echo "<script>window.location.href=window.location.href;</script>";
+    
 }
 if ($action == 'bulk_update_status' && isset($_POST['status'])) {
     foreach ($_POST['status'] as $eoi_number => $status_value) {
@@ -60,7 +61,7 @@ if ($action == 'bulk_update_status' && isset($_POST['status'])) {
         $status_value = $conn->real_escape_string($status_value);
         $conn->query("UPDATE eoi SET Status = '$status_value' WHERE EOInumber = $eoi_number");
     }
-    echo "<script>window.location.href=window.location.href;</script>";
+   
      echo "<div class='success-message'>Status updated successfully.</div>";
 }
 ?>
