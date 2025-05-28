@@ -3,6 +3,10 @@
    
     $sql = "SELECT * FROM jobs";
     $result_jobs = mysqli_query($conn, $sql);
+
+    if (!$result_jobs) {
+        die("Error retrieving jobs: " . mysqli_error($conn));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +21,12 @@
 
     <body>
     <div>
+        
         <!-- Header -->
         <?php include "header.inc";?>
         <!-- Site navigation -->
         <?php include "nav.inc";?>
+
     </div>
         
         <main>
@@ -79,6 +85,10 @@
                         <?php
                             $sql = sprintf("SELECT * FROM responsibilities WHERE job_id = '%s'", $row["job_id"]);
                             $result_responsibilities = mysqli_query($conn, $sql);
+                            // Error handling
+                            if (!$result_responsibilities) {
+                                die("Error retrieving responsibilities: " . mysqli_error($conn));
+                            }
                         ?>
 
                         <ol class="<?= $text_colour ?>">
@@ -109,9 +119,13 @@
                         <?php
                             $sql = sprintf("SELECT * FROM required_skills WHERE job_id = '%s'", $row["job_id"]);
                             $result_required = mysqli_query($conn, $sql);
+                            if (!$result_required) {
+                                die("Error retrieving required skills: " . mysqli_error($conn));
+                            }
                         ?>
 
                         <ul>
+
                             <?php 
                                 while ($item = mysqli_fetch_assoc($result_required)) {
                                     foreach ($item as $key => $value) {
@@ -121,16 +135,23 @@
                                     }
                                 }
                             ?>
+
                         </ul>
                     </section>
 
                     <section class="preferred_quals">
                         <h4 class="jobs_page_heading center_heading <?= $text_colour ?>">Preferred:</h4>
+                        
                         <?php
                             $sql = sprintf("SELECT * FROM preferred_skills WHERE job_id = '%s'", $row["job_id"]);
                             $result_preferred = mysqli_query($conn, $sql);
+                            if (!$result_preferred) {
+                                die("Error retrieving preferred skills: " . mysqli_error($conn));
+                            }
                         ?>
+
                         <ul>
+                            
                             <?php 
                                 while ($item = mysqli_fetch_assoc($result_preferred)) {
                                     foreach ($item as $key => $value) {
@@ -140,16 +161,23 @@
                                     }
                                 }
                             ?>
+
                         </ul>
                     </section>
 
                     <section class="job_salary">
                         <h3 class="jobs_page_heading center_heading <?= $text_colour ?>">Salary and Benefits</h3>
+                        
                         <?php
                             $sql = sprintf("SELECT * FROM salary_and_benefits WHERE job_id = '%s'", $row["job_id"]);
                             $result_salary = mysqli_query($conn, $sql);
+                            if (!$result_salary) {
+                                die("Error retrieving salary and benefits: " . mysqli_error($conn));
+                            }
                         ?>
+
                         <ul>
+
                             <?php 
                                 while ($item = mysqli_fetch_assoc($result_salary)) {
                                     foreach ($item as $key => $value) {
@@ -159,6 +187,7 @@
                                     }
                                 }
                             ?>
+
                         </ul>
                     </section>
 
@@ -170,13 +199,16 @@
                 </form>
                 <p class="<?= $text_colour ?>">Ref #: <?= $row['job_id'] ?></p>
                 </section>
+
             <?php endwhile; ?>
             
         </div>
+
     <?php endif; ?>
 
             <!-- Footer -->
             <?php include "footer.inc";?>
+
         </main>
     </body>
 </html>
