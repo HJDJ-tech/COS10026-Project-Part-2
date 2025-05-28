@@ -141,7 +141,7 @@ body {
 .logo-container {
     padding: 0 15px;
     display: flex;
-    background-color: #111;
+    background-color: #1e1e1e;
     align-items: center;
     height: 100%; /* fills the header */
 }
