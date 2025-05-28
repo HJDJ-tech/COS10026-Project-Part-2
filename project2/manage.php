@@ -34,6 +34,7 @@ if (!isset($_SESSION["attempts"])) {
   $_SESSION["attempts"] = 0;
 }
 
+//  checks to see if the user is currently banned, and looks to see if the time is less than the banned login time w3schools.com/php/func_date_time.asp
 if (isset($_SESSION["banned_login"]) && time() < $_SESSION["banned_login"]) {
   $remaining = $_SESSION["banned_login"] - time();
   $error = "You have been timed out for too many failed logins. You are timed out for $remaining seconds.";
@@ -68,10 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$banned) {
             }
         }
         
-        // If we get here, login failed (either email not found or password wrong)
-        $_SESSION["attempts"] = ($_SESSION["attempts"] ?? 0) + 1;
-        if ($_SESSION["attempts"] >= 3) {
-            $_SESSION["banned_login"] = time() + 120;
+        $_SESSION["attempts"] = ($_SESSION["attempts"] ?? 0) + 1; // checks to see if the user has had any attempts first, and if they haven't had any, assign 0 and then count 1. w3schools.com/php/php_operators.asp        
+        if ($_SESSION["attempts"] >= 3) { // checks to see if attempts is greater than or equal to 3
+            $_SESSION["banned_login"] = time() + 120; //if it is, it bans the user for 120 seconds
             $error = "You have been timed out for too many failed logins. You are timed out for 2 minutes.";
             $banned = true;
             $remaining = 120;
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$banned) {
 ?>
 <div class="login-page">
   <div class="login">
-    <h1>Manager Login</h1>
+    <p>Manager Login</p>
     <form method="post" action="manage.php">
       Manager Email: <input type="text" name="email" required><br>
       Password: <input type="password" name="password" class="<?php echo $inputError; ?>" required><br>
