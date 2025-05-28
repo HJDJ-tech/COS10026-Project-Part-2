@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,3 +92,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$banned) { // continues if banned i
      <?php include "footer.inc";?>
   </body>
 </html>
+
