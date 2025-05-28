@@ -14,7 +14,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="keywords" content="HJDJ IT, IT jobs, software jobs, tech careers, job application, software engineering, developer jobs, IT careers, job openings, apply online">
-        <title>HJDJ IT</title>
+        <title>HJDJ IT Jobs</title>
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="icon" type="image/png" href="images/logoweb.png">
     </head>
