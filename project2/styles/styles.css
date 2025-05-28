@@ -858,7 +858,7 @@ label:first-of-type {
     max-width: 90%;
 }
 
-.login-page .login p {
+.login-page .login h1 {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
@@ -1001,4 +1001,7 @@ table tr:hover td {
     color: red; 
     text-align: center; 
     font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
 }

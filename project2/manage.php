@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$banned) {
 ?>
 <div class="login-page">
   <div class="login">
-    <p>Manager Login</p>
+    <h1>Manager Login</h1>
     <form method="post" action="manage.php">
       Manager Email: <input type="text" name="email" required><br>
       Password: <input type="password" name="password" class="<?php echo $inputError; ?>" required><br>
